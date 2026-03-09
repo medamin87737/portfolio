@@ -1,0 +1,16 @@
+:root {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  color: blue;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  margin: 0;
+  padding: 12px;
+}

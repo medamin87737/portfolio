@@ -1,0 +1,45 @@
+{
+  "properties": [
+    {
+      "id": "1",
+      "title": "Maison de campagne",
+      "location": "Nabeul",
+      "description": "Maison spacieuse et lumineuse, idéale pour un séjour au calme.",
+      "price": 750,
+      "views": 15,
+      "available": true,
+      "imageUrl": "https://picsum.photos/seed/house1/800/500"
+    },
+    {
+      "id": "2",
+      "title": "Appartement centre-ville",
+      "location": "Tunis",
+      "description": "Appartement moderne proche de toutes commodités.",
+      "price": 220,
+      "views": 8,
+      "available": true,
+      "imageUrl": "https://picsum.photos/seed/house2/800/500"
+    },
+    {
+      "id": "3",
+      "title": "Villa avec piscine",
+      "location": "Hammamet",
+      "description": "Villa luxueuse avec piscine privée et jardin.",
+      "price": 980,
+      "views": 25,
+      "available": false,
+      "imageUrl": "https://picsum.photos/seed/house3/800/500"
+    },
+    {
+      "id": "4",
+      "title": "Studio cosy",
+      "location": "Sousse",
+      "description": "Studio chaleureux, parfait pour les courts séjours.",
+      "price": 140,
+      "views": 3,
+      "available": true,
+      "imageUrl": "https://picsum.photos/seed/house4/800/500"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
