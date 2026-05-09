@@ -589,7 +589,7 @@ footer{border-top:1px solid var(--border);padding:1.5rem 3rem;display:flex;justi
 <button type="button" id="a11y-hub-fab" onclick="toggleA11yHub(event)" aria-expanded="false" aria-controls="a11y-hub-panel"
   title="Accessibilité — tout regroupé ici">
   <i class="fa-solid fa-universal-access" aria-hidden="true"></i>
-</button>
+  </button>
 
 <div id="a11y-hub-panel" role="dialog" aria-modal="true" aria-labelledby="a11y-hub-title" aria-hidden="true">
   <div class="a11y-hub-head">
@@ -629,7 +629,7 @@ footer{border-top:1px solid var(--border);padding:1.5rem 3rem;display:flex;justi
 <!-- Nav -->
 <nav>
   <div class="nav-left-cluster">
-    <div class="nav-logo">CMA<em>.</em>dev</div>
+  <div class="nav-logo">CMA<em>.</em>dev</div>
     <button type="button" id="nav-amin-trigger" class="amin-nav-trigger" onclick="toggleAgent()" aria-label="AminMind — assistant intelligent">
       <span class="amin-nav-logo-wrap">
         <img id="navAminPhoto" src="photo.png" alt="" width="40" height="40" decoding="async"/>
@@ -1110,7 +1110,7 @@ document.addEventListener('mousemove', function(e) {
   vel = Math.min(40, Math.sqrt(dx*dx + dy*dy));
   hue = (hue + vel * 3 + dx + dy) % 360;
   if (document.documentElement.getAttribute('data-custom-cursor') !== 'off') {
-    cur.style.left = (mx-6)+'px'; cur.style.top = (my-6)+'px';
+  cur.style.left = (mx-6)+'px'; cur.style.top = (my-6)+'px';
     cur.style.background = 'hsl('+hue+',92%,62%)';
     cur.style.boxShadow = '0 0 22px hsla('+hue+',95%,55%,0.65)';
     curT.style.borderColor = 'hsla('+hue+',80%,60%,0.45)';
@@ -1120,7 +1120,7 @@ document.addEventListener('mousemove', function(e) {
 (function animT() {
   tx += (mx-tx)*0.14; ty += (my-ty)*0.14;
   if (document.documentElement.getAttribute('data-custom-cursor') !== 'off') {
-    curT.style.left = (tx-16)+'px'; curT.style.top = (ty-16)+'px';
+  curT.style.left = (tx-16)+'px'; curT.style.top = (ty-16)+'px';
   }
   requestAnimationFrame(animT);
 })();
@@ -1446,8 +1446,8 @@ function syncAminApiFooter() {
         ? 'POST JSON : /api/chat sur le processus Node du portfolio (le port exact est affiché au démarrage, souvent 8080–8090, pas forcément 8082).'
         : 'POST JSON to /api/chat on the portfolio Node process (port is printed at startup, often 8080–8090, not always 8082).';
       statusEl.textContent = '';
-      return;
-    }
+    return;
+  }
     var health = base + '/api/health';
     var chat = base + '/api/chat';
     linkEl.href = health;
@@ -1626,7 +1626,7 @@ async function sendAgent() {
     });
     var apiBase = await resolveAminmindApiBase();
     if (!apiBase) {
-      typing.remove();
+    typing.remove();
       var nf =
         lang === 'fr'
           ? '⚠️ Aucun serveur portfolio détecté. Lancez « npm start » dans le dossier du projet et ouvrez le site via l’URL affichée. Le port 8082 est souvent un autre programme : le vôtre peut être 8080. Vous pouvez forcer : window.__AMINMIND_API_BASE = "http://127.0.0.1:8080"'
