@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark" data-font-size="1" data-contrast="normal" data-reading="off" data-dyslexia="off" data-reduce-motion="off" data-fatigue="off" data-blue-light="off" data-grayscale="off" data-underline-links="off" data-line-wide="off" data-target-large="off" data-particles="on" data-focus-strong="off" data-custom-cursor="on">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- URL publique de l’API (optionnel), ex: https://votredomaine.com — sinon détection automatique -->
+<meta name="amin-public-api" content="">
+<title>Chniti Med Amin — Ingénieur Informatique</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;600;700;800&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+/* ===== CSS VARIABLES — DARK THEME (default) ===== */
+:root {
+  --bg:#0a0a0f; --bg2:#0f0f1a; --bg3:#12121f; --card:#13131e; --card2:#1a1a2e;
+  --accent:#00d4ff; --accent2:#7c3aed; --accent3:#10b981; --accent4:#f59e0b;
+  --text:#e2e8f0; --text2:#94a3b8; --text3:#64748b;
+  --border:rgba(0,212,255,0.15); --border2:rgba(124,58,237,0.2);
+  --glow:0 0 20px rgba(0,212,255,0.3); --glow2:0 0 30px rgba(124,58,237,0.4);
+  --shadow:0 20px 60px rgba(0,0,0,0.5);
+  --mono:'JetBrains Mono',monospace; --display:'Syne',sans-serif; --body:'Rajdhani',sans-serif;
+  --fs-scale:1;
+}
+/* LIGHT THEME */
+[data-theme="light"] {
+  --bg:#f0f4ff; --bg2:#e8edf8; --bg3:#dde4f5; --card:#ffffff; --card2:#f5f8ff;
+  --accent:#0084cc; --accent2:#5b21b6; --accent3:#059669; --accent4:#d97706;
+  --text:#0f172a; --text2:#334155; --text3:#64748b;
+  --border:rgba(0,132,204,0.2); --border2:rgba(91,33,182,0.2);
+  --glow:0 0 20px rgba(0,132,204,0.2); --shadow:0 20px 60px rgba(0,0,0,0.1);
+}
+/* HIGH CONTRAST */
+[data-contrast="high"] {
+  --bg:#000000; --card:#0a0a0a; --text:#ffffff; --text2:#ffff00;
+  --accent:#00ffff; --accent2:#ff00ff; --accent3:#00ff00; --accent4:#ffff00;
+  --border:rgba(255,255,255,0.5);
+}
+/* READING MODE */
+[data-reading="on"] {
+  --bg:#fdf6e3; --card:#fff8e7; --text:#3c2800; --text2:#5a4000;
+  --accent:#8b5e00; --accent2:#6b3500; --border:rgba(139,94,0,0.3);
+  --fs-scale:1.1;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+.sr-only {
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+.skip-link {
+  position:fixed;top:-100px;left:16px;z-index:50000;padding:12px 18px;background:var(--accent2);color:#fff;
+  font-family:var(--mono);font-size:0.75rem;text-decoration:none;border-radius:6px;transition:top 0.2s;
+}
+.skip-link:focus { top:16px;outline:3px solid var(--accent);outline-offset:2px; }
+html { scroll-behavior:smooth; font-size:calc(16px * var(--fs-scale)); }
+[data-custom-cursor="off"] body { cursor:auto; }
+[data-custom-cursor="off"] #cursor, [data-custom-cursor="off"] #cursor-trail { display:none !important; }
+body {
+  background:var(--bg); color:var(--text); font-family:var(--body);
+  font-size:1rem; line-height:1.6; overflow-x:hidden; cursor:none;
+  transition:background 0.3s, color 0.3s;
+}
+[data-line-wide="on"] body { line-height:1.85; letter-spacing:0.03em; }
+[data-underline-links="on"] a { text-decoration:underline !important; text-underline-offset:3px; }
+[data-grayscale="on"] main, [data-grayscale="on"] nav, [data-grayscale="on"] footer { filter:grayscale(1) contrast(1.05); }
+[data-fatigue="on"] body {
+  filter:sepia(0.14) saturate(0.92);
+}
+[data-blue-light="on"] body::after {
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:9997;
+  background:rgba(255,180,90,0.12);mix-blend-mode:multiply;
+}
+[data-target-large="on"] .btn-primary, [data-target-large="on"] .btn-secondary, [data-target-large="on"] .social-link, [data-target-large="on"] .a11y-hub-grid button, [data-target-large="on"] #a11y-hub-fab, [data-target-large="on"] .contact-link {
+  min-height:48px;padding-top:0.65rem;padding-bottom:0.65rem;
+}
+[data-focus-strong="on"] a:focus-visible, [data-focus-strong="on"] button:focus-visible, [data-focus-strong="on"] input:focus-visible {
+  outline:3px solid var(--accent) !important; outline-offset:3px !important;
+}
+[data-particles="off"] #particles { display:none !important; }
+body.focus-mode main section:not(:target):not(.focus-keep),
+body.focus-mode nav { opacity:0.25; filter:blur(1px); transition:opacity 0.3s; pointer-events:none; }
+body.focus-mode main section:target,
+body.focus-mode #hero { opacity:1!important; filter:none!important; pointer-events:auto!important; }
+body.focus-mode #a11y-hub-fab, body.focus-mode #a11y-hub-panel.open, body.focus-mode #nav-amin-trigger, body.focus-mode #agent-panel.open { opacity:1!important; filter:none!important; pointer-events:auto!important; }
+.a11y-switch-row { display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 6px;border-bottom:1px solid rgba(255,255,255,0.06);font-family:var(--mono);font-size:0.68rem;color:var(--text2); }
+.a11y-switch-row:last-child{border-bottom:none}
+.a11y-switch-row span:first-child{flex:1;line-height:1.35}
+.switch {
+  width:44px;height:24px;border-radius:999px;background:rgba(255,255,255,0.08);border:1px solid var(--border);position:relative;cursor:none;flex-shrink:0;transition:background 0.2s;
+}
+.switch.on { background:rgba(0,212,255,0.25);border-color:var(--accent); }
+.switch::after { content:'';position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:var(--text);transition:transform 0.2s; }
+.switch.on::after { transform:translateX(20px); background:var(--accent); }
+[data-theme="light"] .switch.on { background:rgba(0,132,204,0.2); }
+/* ===== CURSOR ===== */
+#cursor { width:12px;height:12px;background:var(--accent);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:99999;transition:transform 0.1s;box-shadow:var(--glow); }
+#cursor-trail { width:32px;height:32px;border:1px solid rgba(0,212,255,0.4);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:99998;transition:all 0.12s ease; }
+/* ===== SCROLL BAR ===== */
+#scroll-bar { position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:10000;transition:width 0.1s; }
+::-webkit-scrollbar { width:4px; }
+::-webkit-scrollbar-track { background:var(--bg); }
+::-webkit-scrollbar-thumb { background:var(--accent2);border-radius:2px; }
+/* ===== GRID BG ===== */
+.grid-bg {
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(0,212,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.03) 1px,transparent 1px);
+  background-size:60px 60px;
+  transition:opacity 0.3s;
+}
+[data-theme="light"] .grid-bg { background-image:linear-gradient(rgba(0,100,200,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,100,200,0.04) 1px,transparent 1px); }
+.grid-bg::after { content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,transparent 40%,var(--bg) 80%); }
+.orb { position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0;animation:float-orb 8s ease-in-out infinite; }
+.orb-1 { width:400px;height:400px;background:rgba(124,58,237,0.12);top:-100px;right:-100px; }
+.orb-2 { width:300px;height:300px;background:rgba(0,212,255,0.08);bottom:20%;left:-80px;animation-delay:-3s; }
+.orb-3 { width:250px;height:250px;background:rgba(16,185,129,0.06);bottom:-50px;right:30%;animation-delay:-6s; }
+@keyframes float-orb { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-30px) scale(1.05)} }
+/* ===== NAV ===== */
+nav {
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:0.8rem 2.5rem;display:flex;align-items:center;justify-content:space-between;
+  background:rgba(10,10,15,0.85);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);transition:background 0.3s;
+}
+[data-theme="light"] nav { background:rgba(240,244,255,0.9); }
+.nav-logo { font-family:var(--mono);font-size:0.85rem;color:var(--accent);letter-spacing:0.2em; }
+.nav-logo em { color:var(--accent2);font-style:normal; }
+.nav-links { display:flex;gap:1.5rem;list-style:none; }
+.nav-links a { font-family:var(--mono);font-size:0.72rem;color:var(--text2);text-decoration:none;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.3s;position:relative; }
+.nav-links a::after { content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--accent);transform:scaleX(0);transition:transform 0.3s;transform-origin:left; }
+.nav-links a:hover { color:var(--accent); }
+.nav-links a:hover::after { transform:scaleX(1); }
+.nav-left-cluster { display:flex; align-items:center; gap:1.25rem; flex-wrap:wrap; }
+/* ===== AMINMIND NAV LOGO (photo stylisée « IA ») ===== */
+.amin-nav-trigger {
+  display:flex; align-items:center; gap:0.55rem;
+  background:rgba(124,58,237,0.12); border:1px solid var(--border2);
+  border-radius:999px; padding:3px 14px 3px 3px; cursor:none;
+  transition:all 0.25s; font-family:var(--mono);
+}
+.amin-nav-trigger:hover {
+  border-color:var(--accent); box-shadow:var(--glow);
+  background:rgba(0,212,255,0.08);
+}
+.amin-nav-logo-wrap {
+  position:relative; width:40px; height:40px; border-radius:50%; flex-shrink:0;
+  padding:2px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2),#ec4899,var(--accent));
+  background-size:280% 280%;
+  animation:amin-logo-aura 5s ease infinite;
+  box-shadow:0 0 22px rgba(124,58,237,0.35), inset 0 0 12px rgba(0,212,255,0.15);
+}
+@keyframes amin-logo-aura {
+  0%,100%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+}
+.amin-nav-logo-wrap::before {
+  content:''; position:absolute; inset:-5px; border-radius:50%;
+  border:1px dashed rgba(0,212,255,0.35); pointer-events:none;
+  animation:spin-slow 14s linear infinite;
+}
+@keyframes spin-slow { to { transform:rotate(360deg); } }
+.amin-nav-logo-wrap img {
+  display:block; width:100%; height:100%; border-radius:50%; object-fit:cover;
+  border:2px solid var(--bg);
+  filter:contrast(1.08) saturate(1.18) brightness(1.03);
+  mix-blend-mode:normal;
+}
+.amin-nav-logo-wrap .amin-ai-badge {
+  position:absolute; bottom:-2px; right:-2px; width:16px; height:16px;
+  border-radius:4px; background:linear-gradient(135deg,var(--accent2),var(--accent));
+  border:2px solid var(--bg); font-size:9px; font-weight:800;
+  display:flex; align-items:center; justify-content:center; color:#fff;
+  line-height:1; box-shadow:0 0 10px rgba(0,212,255,0.5);
+}
+.amin-nav-label {
+  font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--text); font-weight:600;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+@media(max-width:900px){
+  .amin-nav-label { display:none; }
+  .amin-nav-trigger { padding-right:8px; }
+}
+[data-reduce-motion="on"] .amin-nav-logo-wrap::before,
+[data-reduce-motion="on"] .amin-nav-logo-wrap { animation:none!important; background-position:50% 50%; }
+/* ===== ACCESSIBILITY HUB (bas droite, tout regroupé) ===== */
+#a11y-hub-fab {
+  position:fixed; bottom:24px; right:24px; z-index:3100;
+  width:58px; height:58px; border-radius:50%; cursor:none;
+  border:2px solid rgba(0,212,255,0.45); background:var(--card2);
+  box-shadow:var(--shadow), 0 0 28px rgba(124,58,237,0.35);
+  display:flex; align-items:center; justify-content:center;
+  transition:transform 0.25s, border-color 0.25s;
+}
+#a11y-hub-fab:hover { transform:scale(1.06); border-color:var(--accent); }
+#a11y-hub-fab[aria-expanded="true"] {
+  border-color:var(--accent2); box-shadow:var(--glow2);
+}
+#a11y-hub-fab > i { font-size:28px; color:var(--accent); line-height:1; }
+.amin-api-footer {
+  font-family:var(--mono); font-size:0.62rem; color:var(--text3);
+  margin-top:12px; padding-top:12px; border-top:1px solid var(--border);
+  line-height:1.55; text-align:center;
+}
+.amin-api-footer a { color:var(--accent); word-break:break-all; }
+.social-link .fa-brands, .social-link .fa-solid { font-size:17px; line-height:1; }
+#a11y-hub-panel {
+  position:fixed; bottom:96px; right:24px; z-index:3099;
+  width:min(380px,calc(100vw - 32px)); max-height:min(78vh,620px);
+  overflow:hidden; display:none; flex-direction:column;
+  background:var(--card); border:1px solid var(--border2); border-radius:14px;
+  box-shadow:var(--glow2),var(--shadow);
+}
+#a11y-hub-panel.open { display:flex; animation:slide-up 0.28s ease; }
+.a11y-hub-head {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 16px; border-bottom:1px solid var(--border);
+  background:linear-gradient(135deg,rgba(124,58,237,0.15),rgba(0,212,255,0.06));
+}
+.a11y-hub-head h2 {
+  margin:0; font-family:var(--display); font-size:1rem; font-weight:700;
+  color:var(--text);
+}
+.a11y-hub-close {
+  background:transparent; border:none; color:var(--text2); font-size:1.25rem;
+  cursor:none; line-height:1; padding:4px 8px; border-radius:6px;
+}
+.a11y-hub-close:hover { color:var(--accent); background:rgba(0,212,255,0.08); }
+.a11y-hub-scroll { overflow-y:auto; padding:12px 14px 16px; flex:1; }
+.a11y-hub-lang-row {
+  display:flex; align-items:center; justify-content:space-between;
+  margin-bottom:12px; padding-bottom:10px; border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.a11y-hub-lang-row span { font-family:var(--mono); font-size:0.68rem; color:var(--text2); }
+#a11y-hub-lang-btn {
+  font-family:var(--mono); font-size:0.72rem; padding:8px 16px;
+  border-radius:999px; border:1px solid var(--border); background:var(--card2);
+  color:var(--accent); cursor:none; letter-spacing:0.12em;
+}
+#a11y-hub-lang-btn:hover { border-color:var(--accent); }
+.a11y-hub-grid {
+  display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-bottom:14px;
+}
+@media(max-width:380px){ .a11y-hub-grid { grid-template-columns:repeat(3,1fr); } }
+.a11y-hub-grid button {
+  aspect-ratio:1; min-height:48px; border-radius:10px;
+  border:1px solid var(--border); background:rgba(0,212,255,0.04);
+  color:var(--text2); font-size:1.05rem; cursor:none;
+  display:flex; align-items:center; justify-content:center;
+  transition:all 0.2s; position:relative;
+}
+.a11y-hub-grid button:hover { border-color:var(--accent); color:var(--accent); }
+.a11y-hub-grid button.active { background:rgba(0,212,255,0.14); border-color:var(--accent); color:var(--accent); }
+.a11y-hub-grid button .hub-tip {
+  position:absolute; bottom:104%; left:50%; transform:translateX(-50%);
+  background:var(--card2); border:1px solid var(--border); padding:4px 8px;
+  border-radius:4px; font-size:0.58rem; white-space:nowrap; opacity:0;
+  pointer-events:none; font-family:var(--mono); color:var(--text); z-index:2;
+}
+.a11y-hub-grid button:hover .hub-tip { opacity:1; }
+.a11y-hub-subtitle {
+  font-family:var(--mono); font-size:0.62rem; letter-spacing:0.2em;
+  text-transform:uppercase; color:var(--accent); margin:12px 0 8px;
+}
+/* ===== AMINMIND PANEL (depuis navbar) ===== */
+#agent-panel {
+  position:fixed;top:72px;right:24px;z-index:3050;width:min(400px,calc(100vw - 32px));
+  background:var(--card);border:1px solid var(--border2);border-radius:12px;
+  box-shadow:var(--glow2),var(--shadow);display:none;flex-direction:column;
+  overflow:hidden;max-height:min(560px,calc(100vh - 100px));
+}
+#agent-panel.open { display:flex;animation:slide-up 0.3s ease; }
+@keyframes slide-up { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+.agent-header {
+  padding:16px 20px;background:linear-gradient(135deg,rgba(124,58,237,0.2),rgba(0,212,255,0.1));
+  border-bottom:1px solid var(--border2);display:flex;align-items:center;gap:12px;
+}
+.agent-avatar-wrap {
+  position:relative;width:44px;height:44px;flex-shrink:0;border-radius:50%;
+  padding:2px;background:linear-gradient(135deg,var(--accent),var(--accent2),#ec4899);
+  box-shadow:0 0 18px rgba(124,58,237,0.4);
+}
+.agent-avatar-wrap img {
+  width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;
+  border:2px solid var(--bg);
+  filter:contrast(1.06) saturate(1.15);
+}
+.agent-avatar-wrap .agent-ai-chip {
+  position:absolute;bottom:-3px;right:-3px;font-size:8px;font-weight:800;
+  background:linear-gradient(135deg,var(--accent2),var(--accent));color:#fff;
+  padding:2px 4px;border-radius:4px;border:2px solid var(--card);letter-spacing:0.05em;
+}
+.agent-name { font-family:var(--display);font-size:1rem;font-weight:700;color:var(--text); }
+.agent-status { font-family:var(--mono);font-size:0.65rem;color:var(--accent3);display:flex;align-items:center;gap:5px; }
+.agent-status::before { content:'';display:block;width:6px;height:6px;background:var(--accent3);border-radius:50%;animation:blink 1.5s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+#agent-messages { flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;max-height:350px; }
+.msg { max-width:85%;padding:10px 14px;border-radius:10px;font-size:0.9rem;line-height:1.5; }
+.msg.bot { background:rgba(124,58,237,0.15);border:1px solid rgba(124,58,237,0.2);align-self:flex-start;color:var(--text); }
+.msg.user { background:rgba(0,212,255,0.1);border:1px solid rgba(0,212,255,0.2);align-self:flex-end;color:var(--text); }
+.msg-typing { display:flex;gap:4px;align-items:center;padding:12px 16px; }
+.msg-typing span { width:6px;height:6px;background:var(--accent2);border-radius:50%;animation:typing-dot 1s ease-in-out infinite; }
+.msg-typing span:nth-child(2){animation-delay:0.2s} .msg-typing span:nth-child(3){animation-delay:0.4s}
+@keyframes typing-dot { 0%,100%{transform:scale(0.6);opacity:0.4} 50%{transform:scale(1);opacity:1} }
+.agent-input-row { display:flex;gap:8px;padding:12px 16px;border-top:1px solid var(--border); }
+#agent-input { flex:1;background:var(--card2);border:1px solid var(--border);border-radius:6px;padding:8px 12px;color:var(--text);font-family:var(--mono);font-size:0.8rem;outline:none;transition:border-color 0.3s; }
+#agent-input:focus { border-color:var(--accent); }
+#agent-send { background:linear-gradient(135deg,var(--accent2),var(--accent));border:none;border-radius:6px;width:36px;height:36px;cursor:none;display:flex;align-items:center;justify-content:center;color:white;font-size:1rem;transition:opacity 0.3s; }
+#agent-send:hover { opacity:0.85; }
+/* ===== HERO ===== */
+#hero { min-height:100vh;display:flex;align-items:center;justify-content:center;padding:100px 3rem 3rem;position:relative;overflow:hidden; }
+.hero-inner { display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:1200px;width:100%; }
+.hero-text { position:relative; }
+.hero-badge { display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--mono);font-size:0.7rem;color:var(--accent);letter-spacing:0.2em;text-transform:uppercase;padding:0.4rem 1rem;border:1px solid var(--border);border-radius:2px;background:rgba(0,212,255,0.05);margin-bottom:1.5rem;animation:fade-up 0.8s ease forwards;opacity:0; }
+.dot { width:6px;height:6px;background:var(--accent3);border-radius:50%;animation:blink 1.5s infinite; }
+.hero-name { font-family:var(--display);font-size:clamp(2.5rem,5vw,4.5rem);font-weight:800;line-height:1.05;margin-bottom:0.5rem;animation:fade-up 0.8s 0.2s ease forwards;opacity:0; }
+.hero-name .first { color:var(--text); }
+.hero-name .last { background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent; }
+.hero-title { font-family:var(--mono);font-size:1rem;color:var(--accent2);letter-spacing:0.1em;margin-bottom:2rem;animation:fade-up 0.8s 0.4s ease forwards;opacity:0; }
+.cursor-blink { display:inline-block;width:2px;height:1em;background:var(--accent);margin-left:4px;vertical-align:middle;animation:blink 1s infinite; }
+.hero-desc { font-size:1.05rem;color:var(--text2);line-height:1.8;margin-bottom:2rem;animation:fade-up 0.8s 0.6s ease forwards;opacity:0; }
+.hero-stats { display:flex;gap:2rem;margin-bottom:2rem;animation:fade-up 0.8s 0.8s ease forwards;opacity:0; }
+.stat-num { font-family:var(--mono);font-size:1.8rem;font-weight:700;color:var(--accent);display:block; }
+.stat-label { font-size:0.72rem;color:var(--text3);letter-spacing:0.1em;text-transform:uppercase; }
+.hero-actions { display:flex;gap:1rem;animation:fade-up 0.8s 1s ease forwards;opacity:0; }
+.btn-primary { display:inline-flex;align-items:center;gap:0.5rem;padding:0.8rem 2rem;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-family:var(--mono);font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border:none;border-radius:2px;cursor:none;transition:all 0.3s;position:relative;overflow:hidden; }
+.btn-primary::before { content:'';position:absolute;inset:0;background:rgba(255,255,255,0.1);transform:translateX(-100%);transition:transform 0.3s; }
+.btn-primary:hover::before { transform:translateX(0); }
+.btn-primary:hover { box-shadow:var(--glow); }
+.btn-secondary { display:inline-flex;align-items:center;gap:0.5rem;padding:0.8rem 2rem;background:transparent;color:var(--text);font-family:var(--mono);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border:1px solid var(--border);border-radius:2px;cursor:none;transition:all 0.3s; }
+.btn-secondary:hover { border-color:var(--accent);color:var(--accent);background:rgba(0,212,255,0.05); }
+.social-links { display:flex;gap:0.8rem;margin-top:1.5rem;animation:fade-up 0.8s 1.2s ease forwards;opacity:0;flex-wrap:wrap; }
+.social-link { display:flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--border);border-radius:6px;color:var(--text2);text-decoration:none;font-size:1rem;transition:all 0.3s;background:var(--card); }
+.social-link .fa-brands, .social-link .fa-solid { color:inherit; }
+.social-link:hover { border-color:var(--accent);color:var(--accent);background:rgba(0,212,255,0.05);box-shadow:var(--glow);transform:translateY(-3px); }
+@keyframes fade-up { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+/* ===== PHOTO ZONE ===== */
+.hero-photo-zone { display:flex;align-items:center;justify-content:center;position:relative;animation:fade-up 0.8s 0.3s ease forwards;opacity:0; }
+.photo-container { position:relative;width:340px;height:340px; }
+/* OUTER RING — rotation + alternance : un cercle « actif », les autres quasi invisibles */
+.tech-orbit {
+  position:absolute;border-radius:50%;border:1px solid var(--border);pointer-events:none;
+  will-change:opacity, filter;
+}
+/* Cycle 15s : tiers décalés pour ring extérieur / moyen / intérieur */
+@keyframes orbit-focus-outer {
+  0%, 28% { opacity: 1; filter: brightness(1.15) drop-shadow(0 0 14px rgba(0,212,255,0.35)); border-color: rgba(0,212,255,0.5); }
+  34%, 96% { opacity: 0.03; filter: brightness(0.55); border-color: rgba(255,255,255,0.04); }
+  100% { opacity: 1; filter: brightness(1.15) drop-shadow(0 0 14px rgba(0,212,255,0.35)); border-color: rgba(0,212,255,0.5); }
+}
+@keyframes orbit-focus-mid {
+  0%, 28% { opacity: 0.03; filter: brightness(0.55); border-color: rgba(255,255,255,0.04); }
+  34%, 61% { opacity: 1; filter: brightness(1.15) drop-shadow(0 0 14px rgba(124,58,237,0.38)); border-color: rgba(124,58,237,0.48); }
+  67%, 100% { opacity: 0.03; filter: brightness(0.55); border-color: rgba(255,255,255,0.04); }
+}
+@keyframes orbit-focus-inner {
+  0%, 61% { opacity: 0.03; filter: brightness(0.55); border-color: rgba(255,255,255,0.04); }
+  67%, 93% { opacity: 1; filter: brightness(1.15) drop-shadow(0 0 14px rgba(236,72,153,0.32)); border-color: rgba(236,72,153,0.42); }
+  100% { opacity: 0.03; filter: brightness(0.55); border-color: rgba(255,255,255,0.04); }
+}
+.tech-orbit-1 {
+  inset:-95px;
+  animation: rotate-cw 32s linear infinite, orbit-focus-mid 15s ease-in-out infinite;
+}
+.tech-orbit-2 {
+  inset:-58px;
+  animation: rotate-ccw 24s linear infinite, orbit-focus-inner 15s ease-in-out infinite;
+}
+.tech-orbit-3 {
+  inset:-132px;
+  animation: rotate-cw 46s linear infinite, orbit-focus-outer 15s ease-in-out infinite;
+}
+@keyframes rotate-cw { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+@keyframes rotate-ccw { from{transform:rotate(0deg)} to{transform:rotate(-360deg)} }
+.orbit-icon {
+  position:absolute;width:46px;height:46px;border-radius:8px;
+  background:var(--card2);border:1px solid var(--border);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.4);transition:all 0.3s;
+  transform-origin:center;
+}
+.orbit-icon img { width:24px;height:24px;object-fit:contain; }
+.orbit-icon span { font-family:var(--mono);font-size:0.48rem;color:var(--accent);letter-spacing:-0.01em;text-align:center; }
+/* Counter-rotate icons so they stay upright */
+.tech-orbit-1 .orbit-icon { animation:counter-cw 32s linear infinite; }
+.tech-orbit-2 .orbit-icon { animation:counter-ccw 24s linear infinite; }
+.tech-orbit-3 .orbit-icon { animation:counter-cw 46s linear infinite; }
+@keyframes counter-cw { from{transform:rotate(0deg)} to{transform:rotate(-360deg)} }
+@keyframes counter-ccw { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+/* PHOTO FRAME */
+.photo-frame { position:absolute;inset:0;border-radius:50%;padding:5px;background:linear-gradient(135deg,var(--accent),var(--accent2),var(--accent3),var(--accent));background-size:300% 300%;animation:gradient-spin 4s linear infinite; }
+@keyframes gradient-spin { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+.photo-inner { width:100%;height:100%;border-radius:50%;overflow:hidden;background:var(--bg);border:4px solid var(--bg); }
+.photo-inner img { width:100%;height:100%;object-fit:cover;object-position:center top; }
+/* Scan lines on photo */
+.photo-scanlines { position:absolute;inset:5px;border-radius:50%;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,212,255,0.015) 2px,rgba(0,212,255,0.015) 4px);pointer-events:none;z-index:2; }
+/* NAME RING — même alternance que l’anneau extérieur */
+.name-ring {
+  position:absolute;inset:-50px;border-radius:50%;
+  animation: rotate-cw 20s linear infinite, orbit-focus-outer 15s ease-in-out infinite;
+}
+.name-ring svg { width:100%;height:100%; }
+/* Pulse rings — pulsation + même cycle d’opacité global */
+.pulse-ring {
+  position:absolute;inset:-25px;border-radius:50%;border:1px solid rgba(0,212,255,0.2);
+  animation:
+    pulse-out 2.5s ease-out infinite,
+    orbit-focus-mid 15s ease-in-out infinite;
+}
+.photo-container > .pulse-ring:nth-child(5) {
+  animation:
+    pulse-out 2.5s ease-out 0.8s infinite,
+    orbit-focus-inner 15s ease-in-out -5s infinite;
+}
+.photo-container > .pulse-ring:nth-child(6) {
+  animation:
+    pulse-out 2.5s ease-out 1.6s infinite,
+    orbit-focus-outer 15s ease-in-out -10s infinite;
+}
+@keyframes pulse-out { 0%{transform:scale(0.9);opacity:0.6} 100%{transform:scale(1.2);opacity:0} }
+/* Brackets */
+.brk { position:absolute;width:24px;height:24px;border-color:var(--accent);border-style:solid;border-width:0; }
+.brk-tl{top:-15px;left:-15px;border-top-width:2px;border-left-width:2px}
+.brk-tr{top:-15px;right:-15px;border-top-width:2px;border-right-width:2px}
+.brk-bl{bottom:-15px;left:-15px;border-bottom-width:2px;border-left-width:2px}
+.brk-br{bottom:-15px;right:-15px;border-bottom-width:2px;border-right-width:2px}
+/* ===== SECTIONS ===== */
+.section-wrap { padding:6rem 3rem;max-width:1200px;margin:0 auto;position:relative;z-index:1; }
+.section-header { margin-bottom:3.5rem;opacity:0;transform:translateY(40px);transition:all 0.7s ease; }
+.section-header.visible { opacity:1;transform:translateY(0); }
+.section-tag { font-family:var(--mono);font-size:0.7rem;color:var(--accent);letter-spacing:0.3em;text-transform:uppercase;margin-bottom:0.7rem;display:flex;align-items:center;gap:1rem; }
+.section-tag::before { content:'';display:block;width:40px;height:1px;background:var(--accent); }
+.section-title { font-family:var(--display);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;line-height:1.1; }
+.section-title span { background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent; }
+/* ===== CARDS ===== */
+.card {
+  background:var(--card);border:1px solid var(--border);border-radius:6px;
+  padding:1.8rem;position:relative;overflow:hidden;transition:all 0.35s;
+  opacity:0;transform:translateY(40px);
+}
+.card.visible { opacity:1;transform:translateY(0); }
+.card::before { content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);transform:scaleX(0);transition:transform 0.4s; }
+.card:hover::before { transform:scaleX(1); }
+.card:hover { border-color:rgba(0,212,255,0.3);background:var(--card2);transform:translateY(-4px)!important;box-shadow:var(--shadow),var(--glow); }
+.card::after { content:'';position:absolute;bottom:0;right:0;width:20px;height:20px;border-bottom:1px solid var(--accent2);border-right:1px solid var(--accent2);opacity:0.3; }
+/* ===== ABOUT GRID ===== */
+.about-grid { display:grid;grid-template-columns:1fr 1fr;gap:2rem; }
+.label-sm { font-family:var(--mono);font-size:0.65rem;color:var(--accent);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.5rem;display:block; }
+.timeline { position:relative;padding-left:1.8rem; }
+.timeline::before { content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(180deg,var(--accent),var(--accent2),transparent); }
+.tl-item { position:relative;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,0.05); }
+.tl-item:last-child{border-bottom:none;margin-bottom:0}
+.tl-dot { position:absolute;left:-2.15rem;top:4px;width:10px;height:10px;background:var(--accent);border-radius:50%;box-shadow:0 0 10px var(--accent); }
+.tl-date { font-family:var(--mono);font-size:0.68rem;color:var(--accent2);letter-spacing:0.1em;margin-bottom:0.25rem; }
+.tl-title { font-family:var(--display);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:0.2rem; }
+.tl-sub { font-size:0.9rem;color:var(--text2); }
+/* ===== SKILLS ===== */
+.skills-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.5rem; }
+.skill-header { display:flex;align-items:center;gap:0.8rem;margin-bottom:1rem; }
+.skill-icon { width:36px;height:36px;background:rgba(0,212,255,0.08);border:1px solid var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1rem; }
+.skill-tags { display:flex;flex-wrap:wrap;gap:0.4rem; }
+.skill-tag { font-family:var(--mono);font-size:0.62rem;padding:0.22rem 0.65rem;border-radius:2px;letter-spacing:0.05em;border:1px solid; }
+.tag-c { color:var(--accent);border-color:rgba(0,212,255,0.25);background:rgba(0,212,255,0.05); }
+.tag-p { color:var(--accent2);border-color:rgba(124,58,237,0.25);background:rgba(124,58,237,0.05); }
+.tag-g { color:var(--accent3);border-color:rgba(16,185,129,0.25);background:rgba(16,185,129,0.05); }
+.tag-a { color:var(--accent4);border-color:rgba(245,158,11,0.25);background:rgba(245,158,11,0.05); }
+/* ===== PROJECTS ===== */
+.projects-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:2rem; }
+.proj-card { background:var(--card);border:1px solid var(--border);border-radius:6px;overflow:hidden;transition:all 0.35s;opacity:0;transform:translateY(40px);cursor:none; }
+.proj-card.visible { opacity:1;transform:translateY(0); }
+.proj-card:hover { border-color:rgba(0,212,255,0.4);transform:translateY(-6px)!important;box-shadow:var(--shadow),var(--glow); }
+.proj-banner { height:5px; }
+.proj-banner-1{background:linear-gradient(90deg,#00d4ff,#7c3aed)}
+.proj-banner-2{background:linear-gradient(90deg,#10b981,#00d4ff)}
+.proj-banner-3{background:linear-gradient(90deg,#f59e0b,#7c3aed)}
+.proj-banner-4{background:linear-gradient(90deg,#ec4899,#7c3aed)}
+.proj-banner-5{background:linear-gradient(90deg,#06b6d4,#8b5cf6,#ec4899);height:5px}
+.proj-banner-6{background:linear-gradient(90deg,#7c3aed,#00d4ff,#10b981,#f59e0b);height:4px}
+.proj-body { padding:1.6rem; }
+.proj-num { font-family:var(--mono);font-size:0.62rem;color:var(--text3);letter-spacing:0.2em;margin-bottom:0.7rem;display:flex;align-items:center;gap:0.5rem; }
+.proj-num::before{content:'';display:block;width:16px;height:1px;background:var(--text3)}
+.proj-title { font-family:var(--display);font-size:1.25rem;font-weight:700;color:var(--text);margin-bottom:0.8rem;line-height:1.3; }
+.proj-desc { font-size:0.92rem;color:var(--text2);line-height:1.7;margin-bottom:1.2rem; }
+.proj-stack { display:flex;flex-wrap:wrap;gap:0.35rem;margin-bottom:1.2rem; }
+.stack-b { font-family:var(--mono);font-size:0.58rem;padding:0.18rem 0.55rem;border-radius:2px;letter-spacing:0.05em;border:1px solid; }
+.sb-c{color:var(--accent);border-color:rgba(0,212,255,0.2);background:rgba(0,212,255,0.04)}
+.sb-p{color:var(--accent2);border-color:rgba(124,58,237,0.2);background:rgba(124,58,237,0.04)}
+.sb-g{color:var(--accent3);border-color:rgba(16,185,129,0.2);background:rgba(16,185,129,0.04)}
+.sb-a{color:var(--accent4);border-color:rgba(245,158,11,0.2);background:rgba(245,158,11,0.04)}
+.sb-k{color:#ec4899;border-color:rgba(236,72,153,0.2);background:rgba(236,72,153,0.04)}
+.proj-footer { display:flex;align-items:center;gap:0.8rem;padding-top:0.8rem;border-top:1px solid rgba(255,255,255,0.05); }
+.proj-link { font-family:var(--mono);font-size:0.68rem;color:var(--text2);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.3s;display:flex;align-items:center;gap:0.4rem; }
+.proj-link:hover{color:var(--accent)}
+.star-badge { margin-left:auto;font-family:var(--mono);font-size:0.62rem;color:var(--accent3);padding:2px 8px;border:1px solid rgba(16,185,129,0.3);border-radius:10px; }
+/* ===== EXP / CLUBS ===== */
+.exp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2rem}
+.exp-icon{width:48px;height:48px;border-radius:10px;background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.3);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.2rem}
+.exp-role{font-family:var(--mono);font-size:0.68rem;color:var(--accent2);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.3rem}
+.exp-card h3{font-family:var(--display);font-size:1.15rem;font-weight:700;color:var(--text);margin-bottom:0.7rem}
+.exp-card p{font-size:0.92rem;color:var(--text2);line-height:1.7}
+/* ===== LANG ===== */
+.lang-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.lang-flag{font-size:2.5rem;margin-bottom:0.7rem;display:block}
+.lang-flag.lang-flag-en{font-size:0.95rem;font-family:var(--mono);font-weight:800;letter-spacing:0.18em;color:var(--accent);border:1px solid var(--border);border-radius:6px;padding:0.5rem 0.55rem;width:fit-content;margin-left:auto;margin-right:auto;line-height:1}
+.lang-name{font-family:var(--display);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:0.25rem}
+.lang-level{font-family:var(--mono);font-size:0.7rem;color:var(--accent);letter-spacing:0.1em}
+.lang-bar{height:3px;background:rgba(255,255,255,0.06);border-radius:2px;margin-top:0.8rem;overflow:hidden}
+.lang-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform 1.2s ease}
+.lang-fill.animated{transform:scaleX(1)}
+/* ===== CONTACT ===== */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.contact-links{display:flex;flex-direction:column;gap:0.8rem}
+.contact-link{display:flex;align-items:center;gap:1rem;padding:0.9rem 1.2rem;background:var(--card);border:1px solid var(--border);border-radius:6px;text-decoration:none;color:var(--text);transition:all 0.3s;font-family:var(--mono);font-size:0.78rem;letter-spacing:0.03em}
+.contact-link:hover{border-color:var(--accent);background:rgba(0,212,255,0.04);transform:translateX(8px)}
+.cl-icon{width:34px;height:34px;background:rgba(0,212,255,0.08);border:1px solid var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.95rem;flex-shrink:0}
+.cl-label{color:var(--text3);font-size:0.6rem;display:block;margin-bottom:1px}
+.cl-value{color:var(--text);font-size:0.75rem}
+/* ===== FOOTER ===== */
+footer{border-top:1px solid var(--border);padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}
+.footer-logo{font-family:var(--mono);font-size:0.78rem;color:var(--text3)}
+.footer-logo em{color:var(--accent);font-style:normal}
+.footer-copy{font-family:var(--mono);font-size:0.68rem;color:var(--text3);letter-spacing:0.1em}
+/* ===== PARTICLES ===== */
+#particles{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.particle{position:absolute;width:2px;height:2px;border-radius:50%;background:var(--accent);opacity:0;animation:particle-rise linear infinite}
+@keyframes particle-rise{0%{transform:translateY(0);opacity:0}10%{opacity:0.6}90%{opacity:0.3}100%{transform:translateY(-100vh);opacity:0}}
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  nav{padding:0.8rem 1.2rem}.nav-links{display:none}
+  .hero-inner{grid-template-columns:1fr;gap:3rem;text-align:center}
+  .hero-photo-zone{order:-1}.photo-container{width:250px;height:250px}
+  .hero-actions,.social-links,.hero-stats{justify-content:center}
+  .about-grid{grid-template-columns:1fr}
+  .lang-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .section-wrap{padding:4rem 1.5rem}
+  .projects-grid{grid-template-columns:1fr}
+  #a11y-hub-panel{bottom:92px;right:16px;max-height:70vh}
+  #a11y-hub-fab{bottom:20px;right:16px}
+  #agent-panel{top:64px;right:16px;width:calc(100vw - 32px)!important;max-height:calc(100vh - 88px)}
+}
+/* ===== FONT SIZE CONTROL ===== */
+[data-font-size="2"]{font-size:calc(18px * var(--fs-scale))}
+[data-font-size="3"]{font-size:calc(20px * var(--fs-scale))}
+/* ===== DYSLEXIA FONT ===== */
+[data-dyslexia="on"] body,[data-dyslexia="on"] p,[data-dyslexia="on"] .proj-desc,[data-dyslexia="on"] .exp-card p{font-family:'Arial',sans-serif;letter-spacing:0.06em;word-spacing:0.1em;line-height:1.9}
+/* ===== REDUCED MOTION ===== */
+@media(prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+[data-reduce-motion="on"]*{animation-duration:0.01ms!important;transition-duration:0.01ms!important}
+/* Garder les orbites visibles sans alternance d’opacité quand le mouvement est réduit */
+@media(prefers-reduced-motion:reduce){
+  .tech-orbit-1{animation:rotate-cw 32s linear infinite!important;opacity:1!important;filter:none!important;border-color:var(--border)!important;}
+  .tech-orbit-2{animation:rotate-ccw 24s linear infinite!important;opacity:1!important;filter:none!important;border-color:var(--border)!important;}
+  .tech-orbit-3{animation:rotate-cw 46s linear infinite!important;opacity:1!important;filter:none!important;border-color:var(--border)!important;}
+  .name-ring{animation:rotate-cw 20s linear infinite!important;opacity:1!important;filter:none!important;}
+  .photo-container > .pulse-ring{animation:pulse-out 2.5s ease-out infinite!important;}
+  .photo-container > .pulse-ring:nth-child(5){animation:pulse-out 2.5s ease-out 0.8s infinite!important;}
+  .photo-container > .pulse-ring:nth-child(6){animation:pulse-out 2.5s ease-out 1.6s infinite!important;}
+}
+[data-reduce-motion="on"] .tech-orbit-1{animation:rotate-cw 32s linear infinite!important;opacity:1!important;filter:none!important;border-color:var(--border)!important;}
+[data-reduce-motion="on"] .tech-orbit-2{animation:rotate-ccw 24s linear infinite!important;opacity:1!important;filter:none!important;border-color:var(--border)!important;}
+[data-reduce-motion="on"] .tech-orbit-3{animation:rotate-cw 46s linear infinite!important;opacity:1!important;filter:none!important;border-color:var(--border)!important;}
+[data-reduce-motion="on"] .name-ring{animation:rotate-cw 20s linear infinite!important;opacity:1!important;filter:none!important;}
+[data-reduce-motion="on"] .photo-container > .pulse-ring{animation:pulse-out 2.5s ease-out infinite!important;}
+[data-reduce-motion="on"] .photo-container > .pulse-ring:nth-child(5){animation:pulse-out 2.5s ease-out 0.8s infinite!important;}
+[data-reduce-motion="on"] .photo-container > .pulse-ring:nth-child(6){animation:pulse-out 2.5s ease-out 1.6s infinite!important;}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link" data-fr="Aller au contenu principal" data-en="Skip to main content">Aller au contenu principal</a>
+
+<!-- Cursor -->
+<div id="cursor" aria-hidden="true"></div>
+<div id="cursor-trail" aria-hidden="true"></div>
+<div id="a11y-live" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<!-- Scroll progress -->
+<div id="scroll-bar"></div>
+
+<!-- Particles -->
+<div id="particles"></div>
+
+<!-- Background -->
+<div class="grid-bg"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- Hub accessibilité (bas droite) — tout regroupé -->
+<button type="button" id="a11y-hub-fab" onclick="toggleA11yHub(event)" aria-expanded="false" aria-controls="a11y-hub-panel"
+  title="Accessibilité — tout regroupé ici">
+  <i class="fa-solid fa-universal-access" aria-hidden="true"></i>
+</button>
+
+<div id="a11y-hub-panel" role="dialog" aria-modal="true" aria-labelledby="a11y-hub-title" aria-hidden="true">
+  <div class="a11y-hub-head">
+    <h2 id="a11y-hub-title" data-fr="Accessibilité &amp; confort" data-en="Accessibility &amp; comfort">Accessibilité &amp; confort</h2>
+    <button type="button" class="a11y-hub-close" onclick="closeA11yHub()" aria-label="Fermer">✕</button>
+  </div>
+  <div class="a11y-hub-scroll">
+    <div class="a11y-hub-lang-row">
+      <span data-fr="Langue du site" data-en="Site language">Langue du site</span>
+      <button type="button" id="a11y-hub-lang-btn" onclick="toggleLang(); syncHubLangBtn();">🌐 FR</button>
+    </div>
+    <div class="a11y-hub-subtitle" data-fr="Réglages rapides" data-en="Quick settings">Réglages rapides</div>
+    <div class="a11y-hub-grid">
+      <button type="button" onclick="toggleTheme(); syncHubActiveBtns();" id="hub-btn-theme">🌓<span class="hub-tip" data-fr="Clair / sombre" data-en="Light / dark">Clair / sombre</span></button>
+      <button type="button" onclick="changeFontSize(1)" id="hub-font-plus">A+<span class="hub-tip" data-fr="Texte +" data-en="Larger text">Texte +</span></button>
+      <button type="button" onclick="changeFontSize(-1)" id="hub-font-minus">A−<span class="hub-tip" data-fr="Texte −" data-en="Smaller text">Texte −</span></button>
+      <button type="button" onclick="toggleContrast(); syncHubActiveBtns();" id="hub-btn-contrast">◑<span class="hub-tip" data-fr="Contraste" data-en="Contrast">Contraste</span></button>
+      <button type="button" onclick="toggleReading(); syncHubActiveBtns();" id="hub-btn-reading">📖<span class="hub-tip" data-fr="Lecture" data-en="Reading">Lecture</span></button>
+      <button type="button" onclick="toggleDyslexia(); syncHubActiveBtns();" id="hub-btn-dyslexia">Aa<span class="hub-tip" data-fr="Police lisible" data-en="Readable font">Police lisible</span></button>
+      <button type="button" onclick="toggleReduceMotion(); syncHubActiveBtns();" id="hub-btn-motion">⏸<span class="hub-tip" data-fr="Moins d’animations" data-en="Less motion">Moins d’animations</span></button>
+      <button type="button" onclick="focusMode(); syncHubActiveBtns();" id="hub-btn-focus">🔍<span class="hub-tip" data-fr="Mode focus" data-en="Focus mode">Mode focus</span></button>
+      <button type="button" onclick="toggleCustomCursor(); syncHubActiveBtns();" id="hub-btn-cursor">◎<span class="hub-tip" data-fr="Curseur" data-en="Cursor">Curseur</span></button>
+    </div>
+    <div class="a11y-hub-subtitle" data-fr="Options avancées" data-en="Advanced">Options avancées</div>
+    <div class="a11y-switch-row"><span data-fr="Souligner les liens" data-en="Underline links">Souligner les liens</span><button type="button" class="switch" id="sw-underline" onclick="toggleHtmlFlag('data-underline-links','sw-underline')" aria-pressed="false"></button></div>
+    <div class="a11y-switch-row"><span data-fr="Interligne large" data-en="Wide line height">Interligne large</span><button type="button" class="switch" id="sw-line" onclick="toggleHtmlFlag('data-line-wide','sw-line')" aria-pressed="false"></button></div>
+    <div class="a11y-switch-row"><span data-fr="Grandes cibles" data-en="Large targets">Grandes cibles</span><button type="button" class="switch" id="sw-target" onclick="toggleHtmlFlag('data-target-large','sw-target')" aria-pressed="false"></button></div>
+    <div class="a11y-switch-row"><span data-fr="Focus renforcé" data-en="Strong focus">Focus renforcé</span><button type="button" class="switch" id="sw-focus" onclick="toggleHtmlFlag('data-focus-strong','sw-focus')" aria-pressed="false"></button></div>
+    <div class="a11y-switch-row"><span data-fr="Fatigue visuelle" data-en="Eye comfort tint">Fatigue visuelle</span><button type="button" class="switch" id="sw-fatigue" onclick="toggleHtmlFlag('data-fatigue','sw-fatigue')" aria-pressed="false"></button></div>
+    <div class="a11y-switch-row"><span data-fr="Moins de lumière bleue" data-en="Warm screen tint">Moins de lumière bleue</span><button type="button" class="switch" id="sw-blue" onclick="toggleHtmlFlag('data-blue-light','sw-blue')" aria-pressed="false"></button></div>
+    <div class="a11y-switch-row"><span data-fr="Noir &amp; blanc" data-en="Grayscale">Noir &amp; blanc</span><button type="button" class="switch" id="sw-gray" onclick="toggleHtmlFlag('data-grayscale','sw-gray')" aria-pressed="false"></button></div>
+    <div class="a11y-switch-row"><span data-fr="Masquer particules" data-en="Hide particles">Masquer particules</span><button type="button" class="switch" id="sw-part" onclick="toggleParticles()" aria-pressed="false"></button></div>
+    <button type="button" class="btn-secondary" style="width:100%;margin-top:12px;font-size:0.72rem;padding:10px" onclick="resetA11y()" data-fr="Tout réinitialiser" data-en="Reset all">Tout réinitialiser</button>
+  </div>
+</div>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-left-cluster">
+    <div class="nav-logo">CMA<em>.</em>dev</div>
+    <button type="button" id="nav-amin-trigger" class="amin-nav-trigger" onclick="toggleAgent()" aria-label="AminMind — assistant intelligent">
+      <span class="amin-nav-logo-wrap">
+        <img id="navAminPhoto" src="photo.png" alt="" width="40" height="40" decoding="async"/>
+        <span class="amin-ai-badge" aria-hidden="true">AI</span>
+      </span>
+      <span class="amin-nav-label">AminMind</span>
+    </button>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about" data-en="About" data-fr="À propos">À propos</a></li>
+    <li><a href="#skills" data-en="Skills" data-fr="Compétences">Compétences</a></li>
+    <li><a href="#projects" data-en="Projects" data-fr="Projets">Projets</a></li>
+    <li><a href="#experience" data-en="Experience" data-fr="Expérience">Expérience</a></li>
+    <li><a href="#contact" data-en="Contact" data-fr="Contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        <span data-fr="Disponible — Open to opportunities" data-en="Available — Open to opportunities">Disponible — Open to opportunities</span>
+      </div>
+      <h1 class="hero-name">
+        <span class="first">Chniti<br></span>
+        <span class="last">Med Amin</span>
+      </h1>
+      <div class="hero-title">
+        <span id="typed-title"></span><span class="cursor-blink"></span>
+      </div>
+      <p class="hero-desc" data-fr="Développeur passionné · Full Stack · DevOps · IA &amp; Machine Learning<br>Du code propre, des architectures robustes, des solutions intelligentes." data-en="Passionate developer · Full Stack · DevOps · AI &amp; Machine Learning<br>Clean code, robust architectures, intelligent solutions.">
+        Développeur passionné · Full Stack · DevOps · IA &amp; Machine Learning<br>Du code propre, des architectures robustes, des solutions intelligentes.
+      </p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num" data-count="10">0</span>
+          <span class="stat-label" data-fr="Projets" data-en="Projects">Projets</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="5">0</span>
+          <span class="stat-label" data-fr="Années études" data-en="Study Years">Années études</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="38">0</span>
+          <span class="stat-label" data-fr="Technologies" data-en="Technologies">Technologies</span>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary" data-fr="Voir mes projets" data-en="View Projects">
+          <i class="fa-solid fa-angle-right" style="font-size:13px" aria-hidden="true"></i>
+          Voir mes projets
+        </a>
+        <a href="#contact" class="btn-secondary" data-fr="Me contacter" data-en="Contact Me">Me contacter</a>
+      </div>
+      <div class="social-links">
+        <a href="mailto:med.amin.chniti@gmail.com" class="social-link" title="Gmail" aria-label="Gmail"><i class="fa-brands fa-google" aria-hidden="true"></i></a>
+        <a href="mailto:Medamin.Chniti@esprit.tn" class="social-link" title="Outlook" aria-label="Outlook"><i class="fa-brands fa-microsoft" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/med-amin-chniti-08a3562a2/" class="social-link" title="LinkedIn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+        <a href="https://github.com/medamin87737" class="social-link" title="GitHub" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+        <a href="https://www.facebook.com/amin.ch.73744?locale=fr_FR" class="social-link" title="Facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/amiin_ch_/" class="social-link" title="Instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://wa.me/21654559210" class="social-link" title="WhatsApp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <!-- PHOTO -->
+    <div class="hero-photo-zone">
+      <div class="photo-container">
+        <div class="tech-orbit tech-orbit-3" id="orbit3"></div>
+        <div class="tech-orbit tech-orbit-1" id="orbit1"></div>
+        <div class="tech-orbit tech-orbit-2" id="orbit2"></div>
+        <div class="pulse-ring"></div>
+        <div class="pulse-ring"></div>
+        <div class="pulse-ring"></div>
+        <div class="name-ring">
+          <svg viewBox="0 0 460 460" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <path id="nameCircle" d="M 230,230 m -195,0 a 195,195 0 1,1 390,0 a 195,195 0 1,1 -390,0"/>
+            </defs>
+            <text fill="rgba(0,212,255,0.5)" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="6">
+              <textPath href="#nameCircle">✦ CHNITI MED AMIN ✦ INGÉNIEUR INFORMATIQUE ✦ FULL STACK ✦ DEVOPS ✦ AI &amp; ML ✦</textPath>
+            </text>
+          </svg>
+        </div>
+        <div class="photo-frame">
+          <div class="photo-inner">
+            <img id="profilePhoto" src="" alt="Chniti Med Amin"/>
+          </div>
+        </div>
+        <div class="photo-scanlines"></div>
+        <div class="brk brk-tl"></div>
+        <div class="brk brk-tr"></div>
+        <div class="brk brk-bl"></div>
+        <div class="brk brk-br"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="section-wrap">
+  <div class="section-header">
+    <div class="section-tag" data-fr="Parcours" data-en="Journey">Parcours</div>
+    <h2 class="section-title" data-fr="Qui suis-je <span>&amp; mon chemin</span>" data-en="Who Am I <span>&amp; My Journey</span>">Qui suis-je <span>&amp; mon chemin</span></h2>
+  </div>
+  <div class="about-grid">
+    <div class="card" style="transition-delay:0.1s">
+      <span class="label-sm" data-fr="À propos" data-en="About Me">À propos</span>
+      <h3 style="font-family:var(--display);font-size:1.25rem;font-weight:700;color:var(--text);margin-bottom:1rem" data-fr="Passionné &amp; Énergique" data-en="Passionate &amp; Energetic">Passionné &amp; Énergique</h3>
+      <p data-fr="Ingénieur informatique diplômé d'ESPRIT, je suis un développeur passionné qui aime profondément le développement et l'informatique. Dynamique et curieux, je m'épanouis dans le travail d'équipe — non pas parce que je cherche à diriger, mais parce que je crois sincèrement que la collaboration crée les meilleures solutions. J'apporte énergie, intégrité et créativité dans chaque projet." data-en="Computer engineer graduated from ESPRIT, I am a passionate developer who deeply loves development and computer science. Dynamic and curious, I thrive in teamwork — not because I seek to lead, but because I sincerely believe collaboration creates the best solutions. I bring energy, integrity and creativity to every project." style="color:var(--text2);font-size:0.98rem;line-height:1.8">
+        Ingénieur informatique diplômé d'ESPRIT, je suis un développeur passionné qui aime profondément le développement et l'informatique. Dynamique et curieux, je m'épanouis dans le travail d'équipe — non pas parce que je cherche à diriger, mais parce que je crois sincèrement que la collaboration crée les meilleures solutions. J'apporte énergie, intégrité et créativité dans chaque projet.
+      </p>
+    </div>
+    <div class="card" style="transition-delay:0.2s">
+      <span class="label-sm" data-fr="Formation" data-en="Education">Formation</span>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">2023 — 2025</div>
+          <div class="tl-title" data-fr="Ingénieur Informatique" data-en="Computer Engineer">Ingénieur Informatique</div>
+          <div class="tl-sub" data-fr="ESPRIT — École Supérieure Privée d'Ingénierie" data-en="ESPRIT — Private Engineering School">ESPRIT — École Supérieure Privée d'Ingénierie</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">2020 — 2023</div>
+          <div class="tl-title" data-fr="Licence en systèmes embarqués" data-en="Bachelor in Embedded Systems">Licence en systèmes embarqués</div>
+          <div class="tl-sub" data-fr="ISET Sousse" data-en="ISET Sousse">ISET Sousse</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">2020 — 2021</div>
+          <div class="tl-title" data-fr="Baccalauréat Technique" data-en="Technical Baccalaureate">Baccalauréat Technique</div>
+          <div class="tl-sub">Spécialité Technique</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills" class="section-wrap">
+  <div class="section-header">
+    <div class="section-tag" data-fr="Compétences" data-en="Skills">Compétences</div>
+    <h2 class="section-title">Stack <span data-fr="Technique" data-en="Technical">Technique</span></h2>
+  </div>
+  <div class="skills-grid">
+    <div class="card" style="transition-delay:0.05s">
+      <div class="skill-header"><div class="skill-icon">🌐</div><h4 style="font-family:var(--display);font-weight:700;color:var(--text)">Frontend</h4></div>
+      <div class="skill-tags"><span class="skill-tag tag-c">React JSX</span><span class="skill-tag tag-c">React TSX</span><span class="skill-tag tag-c">Angular</span><span class="skill-tag tag-g">HTML5</span><span class="skill-tag tag-g">CSS3</span><span class="skill-tag tag-a">Vite</span><span class="skill-tag tag-a">JavaFX</span></div>
+    </div>
+    <div class="card" style="transition-delay:0.1s">
+      <div class="skill-header"><div class="skill-icon">⚙️</div><h4 style="font-family:var(--display);font-weight:700;color:var(--text)">Backend</h4></div>
+      <div class="skill-tags"><span class="skill-tag tag-p">Spring Boot</span><span class="skill-tag tag-p">NestJS</span><span class="skill-tag tag-c">Python</span><span class="skill-tag tag-g">C# .NET</span><span class="skill-tag tag-g">C / C++</span><span class="skill-tag tag-a">Java</span></div>
+    </div>
+    <div class="card" style="transition-delay:0.15s">
+      <div class="skill-header"><div class="skill-icon">🧠</div><h4 style="font-family:var(--display);font-weight:700;color:var(--text)" data-fr="IA & ML" data-en="AI & ML">IA &amp; ML</h4></div>
+      <div class="skill-tags"><span class="skill-tag tag-c">XGBoost</span><span class="skill-tag tag-p">DBSCAN</span><span class="skill-tag tag-g">Régression Lin.</span><span class="skill-tag tag-a">LLM</span><span class="skill-tag tag-a">NLP</span><span class="skill-tag tag-c">Inférence LLM</span></div>
+    </div>
+    <div class="card" style="transition-delay:0.2s">
+      <div class="skill-header"><div class="skill-icon">🚀</div><h4 style="font-family:var(--display);font-weight:700;color:var(--text)">DevOps</h4></div>
+      <div class="skill-tags"><span class="skill-tag tag-c">Docker</span><span class="skill-tag tag-c">Docker Hub</span><span class="skill-tag tag-g">Kubernetes</span><span class="skill-tag tag-p">CI/CD</span><span class="skill-tag tag-a">Nginx</span><span class="skill-tag tag-p">SonarQube</span><span class="skill-tag tag-g">Webhook</span></div>
+    </div>
+    <div class="card" style="transition-delay:0.25s">
+      <div class="skill-header"><div class="skill-icon">📊</div><h4 style="font-family:var(--display);font-weight:700;color:var(--text)">Monitoring</h4></div>
+      <div class="skill-tags"><span class="skill-tag tag-c">Grafana</span><span class="skill-tag tag-p">Prometheus</span><span class="skill-tag tag-g">AlertManager</span><span class="skill-tag tag-a">MongoDB Atlas</span><span class="skill-tag tag-c">Compass</span></div>
+    </div>
+    <div class="card" style="transition-delay:0.3s">
+      <div class="skill-header"><div class="skill-icon">🔗</div><h4 style="font-family:var(--display);font-weight:700;color:var(--text)">APIs & Cloud</h4></div>
+      <div class="skill-tags"><span class="skill-tag tag-c">APIs IA sécurisées</span><span class="skill-tag tag-p">External AI APIs</span><span class="skill-tag tag-g">REST API</span><span class="skill-tag tag-a">JWT</span><span class="skill-tag tag-c">Cluster 2 Workers</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects" class="section-wrap">
+  <div class="section-header">
+    <div class="section-tag" data-fr="Réalisations" data-en="Work">Réalisations</div>
+    <h2 class="section-title" data-fr="Mes <span>Projets</span>" data-en="My <span>Projects</span>">Mes <span>Projets</span></h2>
+  </div>
+  <div class="projects-grid">
+    <div class="proj-card"><div class="proj-banner proj-banner-1"></div><div class="proj-body">
+      <div class="proj-num">01 — Desktop · Langage C</div>
+      <h3 class="proj-title" data-fr="Gestion de parking (console / desktop)" data-en="Parking management (console / desktop)">Gestion de parking (console / desktop)</h3>
+      <p class="proj-desc" data-fr="Logiciel de gestion de parc de stationnement développé en C : modélisation des places, flux véhicules, calcul des durées et des montants, persistance structurée et interface utilisateur sobre orientée efficacité." data-en="Parking-lot management software built in C: bay modeling, vehicle flows, duration and fee calculation, structured persistence, and a lean UI focused on reliability and performance.">Logiciel de gestion de parc de stationnement développé en C : modélisation des places, flux véhicules, calcul des durées et des montants, persistance structurée et interface utilisateur sobre orientée efficacité.</p>
+      <div class="proj-stack"><span class="stack-b sb-c">C</span><span class="stack-b sb-p">Structures</span><span class="stack-b sb-g">Fichiers</span><span class="stack-b sb-a">Algorithmes</span></div>
+      <div class="proj-footer"><span class="proj-link">→ Application Desktop</span></div>
+    </div></div>
+    <div class="proj-card"><div class="proj-banner proj-banner-2"></div><div class="proj-body">
+      <div class="proj-num">02 — Event Management</div>
+      <h3 class="proj-title" data-fr="Gestion des Événements" data-en="Event Management">Gestion des Événements</h3>
+      <p class="proj-desc" data-fr="Plateforme JavaFX d'organisation d'événements. Planification, gestion des participants, notifications automatiques et tableau de bord analytique." data-en="JavaFX event organization platform. Planning, participant management, automatic notifications and analytics dashboard.">Plateforme JavaFX d'organisation d'événements. Planification, gestion des participants, notifications automatiques et tableau de bord analytique.</p>
+      <div class="proj-stack"><span class="stack-b sb-c">JavaFX</span><span class="stack-b sb-p">Java</span><span class="stack-b sb-g">Event Driven</span><span class="stack-b sb-a">Scheduler</span></div>
+      <div class="proj-footer"><span class="proj-link">→ Application Desktop</span></div>
+    </div></div>
+    <div class="proj-card"><div class="proj-banner proj-banner-3"></div><div class="proj-body">
+      <div class="proj-num">03 — Machine Learning</div>
+      <h3 class="proj-title" data-fr="Modèles ML Prédictifs" data-en="Predictive ML Models">Modèles ML Prédictifs</h3>
+      <p class="proj-desc" data-fr="3 modèles Machine Learning : XGBoost (classification), DBSCAN (clustering non-supervisé), Régression Linéaire (prédiction). Visualisations interactives des résultats." data-en="3 Machine Learning models: XGBoost (classification), DBSCAN (unsupervised clustering), Linear Regression (prediction). Interactive result visualizations.">3 modèles Machine Learning : XGBoost (classification), DBSCAN (clustering non-supervisé), Régression Linéaire (prédiction). Visualisations interactives des résultats.</p>
+      <div class="proj-stack"><span class="stack-b sb-c">Python</span><span class="stack-b sb-g">XGBoost</span><span class="stack-b sb-p">DBSCAN</span><span class="stack-b sb-a">Scikit-learn</span><span class="stack-b sb-c">Pandas</span></div>
+      <div class="proj-footer"><span class="proj-link">→ Data Science</span></div>
+    </div></div>
+    <div class="proj-card"><div class="proj-banner proj-banner-4"></div><div class="proj-body">
+      <div class="proj-num">04 — Full Stack Web</div>
+      <h3 class="proj-title" data-fr="Application Web Full Stack" data-en="Full Stack Web App">Application Web Full Stack</h3>
+      <p class="proj-desc" data-fr="Application web hébergée avec frontend React JSX et backend Python. API RESTful robuste, auth sécurisée et déploiement cloud avec CI/CD automatisé." data-en="Hosted web application with React JSX frontend and Python backend. Robust RESTful API, secure auth and cloud deployment with automated CI/CD.">Application web hébergée avec frontend React JSX et backend Python. API RESTful robuste, auth sécurisée et déploiement cloud avec CI/CD automatisé.</p>
+      <div class="proj-stack"><span class="stack-b sb-c">React JSX</span><span class="stack-b sb-p">Python</span><span class="stack-b sb-g">REST API</span><span class="stack-b sb-a">Docker</span><span class="stack-b sb-k">Hébergé</span></div>
+      <div class="proj-footer"><span class="proj-link">→ Web App</span></div>
+    </div></div>
+    <div class="proj-card" style="grid-column:1/-1"><div class="proj-banner proj-banner-5"></div><div class="proj-body">
+      <div class="proj-num">05 — Architecture microservices · Éducation</div>
+      <h3 class="proj-title" data-fr="Plateforme éducative microservices" data-en="Microservices education platform">Plateforme éducative microservices</h3>
+      <p class="proj-desc" data-fr="Écosystème découpé en services : Spring Cloud Netflix Eureka pour le registre, passerelle API (API Gateway), Keycloak pour l’identité (OIDC/OAuth2), Config Server pour centraliser la configuration, backends Spring Boot et NestJS, front React, données relationnelles sous H2/SQL et documents sous MongoDB — pensé comme un socle pédagogique complet pour le cloud-native." data-en="A service-oriented ecosystem: Netflix Eureka registry, API Gateway, Keycloak for identity (OIDC/OAuth2), Spring Cloud Config Server, Spring Boot and NestJS backends, React frontend, relational data on H2/SQL plus MongoDB for documents — designed as a full teaching stack for cloud-native patterns.">Écosystème découpé en services : Spring Cloud Netflix Eureka pour le registre, passerelle API (API Gateway), Keycloak pour l’identité (OIDC/OAuth2), Config Server pour centraliser la configuration, backends Spring Boot et NestJS, front React, données relationnelles sous H2/SQL et documents sous MongoDB — pensé comme un socle pédagogique complet pour le cloud-native.</p>
+      <div class="proj-stack"><span class="stack-b sb-c">Eureka</span><span class="stack-b sb-p">API GW</span><span class="stack-b sb-g">Keycloak</span><span class="stack-b sb-a">Config</span><span class="stack-b sb-c">Spring Boot</span><span class="stack-b sb-p">NestJS</span><span class="stack-b sb-g">React</span><span class="stack-b sb-a">H2</span><span class="stack-b sb-c">MongoDB</span></div>
+      <div class="proj-footer"><span class="proj-link">→ Microservices</span></div>
+    </div></div>
+    <div class="proj-card"><div class="proj-banner proj-banner-2"></div><div class="proj-body">
+      <div class="proj-num">06 — E-commerce Full Stack</div>
+      <h3 class="proj-title" data-fr="Plateforme e-commerce (React · Spring Boot · MongoDB)" data-en="E-commerce platform (React · Spring Boot · MongoDB)">Plateforme e-commerce (React · Spring Boot · MongoDB)</h3>
+      <p class="proj-desc" data-fr="Application e-commerce complète avec catalogue produits, panier, gestion des commandes et authentification. Frontend React, API Spring Boot et persistance NoSQL MongoDB pour un flux transactionnel fluide." data-en="Complete e-commerce application with product catalog, cart, order management, and authentication. React frontend, Spring Boot API, and MongoDB persistence for a smooth transactional flow.">Application e-commerce complète avec catalogue produits, panier, gestion des commandes et authentification. Frontend React, API Spring Boot et persistance NoSQL MongoDB pour un flux transactionnel fluide.</p>
+      <div class="proj-stack"><span class="stack-b sb-c">React</span><span class="stack-b sb-p">Spring Boot</span><span class="stack-b sb-g">MongoDB</span><span class="stack-b sb-a">REST API</span><span class="stack-b sb-c">JWT</span></div>
+      <div class="proj-footer"><span class="proj-link">→ E-commerce App</span></div>
+    </div></div>
+    <div class="proj-card"><div class="proj-banner proj-banner-3"></div><div class="proj-body">
+      <div class="proj-num">07 — Emploi Microservices</div>
+      <h3 class="proj-title" data-fr="Plateforme de recherche d'emploi microservices" data-en="Microservices job-search platform">Plateforme de recherche d'emploi microservices</h3>
+      <p class="proj-desc" data-fr="Solution de recrutement complète front et back, organisée en microservices. Gestion des offres, candidatures, profils et notifications, avec architecture distribuée et APIs sécurisées." data-en="Complete recruitment solution with frontend and backend organized as microservices. Handles job offers, applications, profiles, and notifications with distributed architecture and secure APIs.">Solution de recrutement complète front et back, organisée en microservices. Gestion des offres, candidatures, profils et notifications, avec architecture distribuée et APIs sécurisées.</p>
+      <div class="proj-stack"><span class="stack-b sb-c">Spring Boot</span><span class="stack-b sb-p">Angular</span><span class="stack-b sb-g">SQL</span><span class="stack-b sb-a">Microservices</span><span class="stack-b sb-c">API Gateway</span></div>
+      <div class="proj-footer"><span class="proj-link">→ Job Platform</span></div>
+    </div></div>
+    <div class="proj-card"><div class="proj-banner proj-banner-4"></div><div class="proj-body">
+      <div class="proj-num">08 — Event Management Web</div>
+      <h3 class="proj-title" data-fr="Application d'événements (Angular · Spring Boot · SQL)" data-en="Event application (Angular · Spring Boot · SQL)">Application d'événements (Angular · Spring Boot · SQL)</h3>
+      <p class="proj-desc" data-fr="Application web de gestion d'événements : création, planification, inscriptions et suivi. Architecture full stack avec frontend Angular, backend Spring Boot et base relationnelle SQL." data-en="Event-management web app: creation, scheduling, registrations, and tracking. Full-stack architecture with Angular frontend, Spring Boot backend, and relational SQL database.">Application web de gestion d'événements : création, planification, inscriptions et suivi. Architecture full stack avec frontend Angular, backend Spring Boot et base relationnelle SQL.</p>
+      <div class="proj-stack"><span class="stack-b sb-c">Angular</span><span class="stack-b sb-p">Spring Boot</span><span class="stack-b sb-g">SQL</span><span class="stack-b sb-a">REST</span></div>
+      <div class="proj-footer"><span class="proj-link">→ Event App</span></div>
+    </div></div>
+    <div class="proj-card"><div class="proj-banner proj-banner-1"></div><div class="proj-body">
+      <div class="proj-num">09 — Cafe Management Backend</div>
+      <h3 class="proj-title" data-fr="Backend de gestion de cafe (Spring Boot · SQL)" data-en="Cafe management backend (Spring Boot · SQL)">Backend de gestion de cafe (Spring Boot · SQL)</h3>
+      <p class="proj-desc" data-fr="API backend pour un systeme de gestion de cafe: menu, commandes, stock et suivi des ventes. Conception orientee services avec persistence SQL et endpoints REST." data-en="Backend API for a cafe management system: menu, orders, stock, and sales tracking. Service-oriented design with SQL persistence and REST endpoints.">API backend pour un systeme de gestion de cafe: menu, commandes, stock et suivi des ventes. Conception orientee services avec persistence SQL et endpoints REST.</p>
+      <div class="proj-stack"><span class="stack-b sb-c">Spring Boot</span><span class="stack-b sb-p">SQL</span><span class="stack-b sb-g">REST API</span><span class="stack-b sb-a">JPA</span></div>
+      <div class="proj-footer"><span class="proj-link">→ Backend API</span></div>
+    </div></div>
+    <div class="proj-card" style="grid-column:1/-1"><div class="proj-banner proj-banner-6"></div><div class="proj-body">
+      <div class="proj-num">10 — ⭐ Projet phare · IA + DevOps enterprise</div>
+      <h3 class="proj-title" data-fr="Maghrebia Assurance — recommandation IA des collaborateurs" data-en="Maghrebia Insurance — AI-powered employee recommendation">Maghrebia Assurance — recommandation IA des collaborateurs</h3>
+      <p class="proj-desc" data-fr="Solution métier hébergée pour Maghrebia Assurance : moteur de recommandation de profils avec modèles IA (LLM, NLP) et orchestration d’APIs d’inférence tierces. Chaîne DevOps bout-en-bout — CI/CD, webhooks, cluster Kubernetes (dont deux worker nodes), observabilité Grafana / Prometheus / Alertmanager, qualité SonarQube, Vitest sur le front, Nginx en frontal. Interface React (TSX) + Vite, API NestJS, MongoDB Compass en local et Atlas en production, microservice Python dédié au scoring de recommandation." data-en="Hosted business solution for Maghrebia Insurance: employee-profile recommendation with AI models (LLM, NLP) and orchestration of third-party inference APIs. End-to-end DevOps — CI/CD, webhooks, Kubernetes cluster (including two worker nodes), Grafana / Prometheus / Alertmanager observability, SonarQube quality gates, Vitest on the frontend, Nginx at the edge. React (TSX) + Vite UI, NestJS APIs, MongoDB Compass locally and Atlas in production, Python microservice for recommendation scoring.">Solution métier hébergée pour Maghrebia Assurance : moteur de recommandation de profils avec modèles IA (LLM, NLP) et orchestration d’APIs d’inférence tierces. Chaîne DevOps bout-en-bout — CI/CD, webhooks, cluster Kubernetes (dont deux worker nodes), observabilité Grafana / Prometheus / Alertmanager, qualité SonarQube, Vitest sur le front, Nginx en frontal. Interface React (TSX) + Vite, API NestJS, MongoDB Compass en local et Atlas en production, microservice Python dédié au scoring de recommandation.</p>
+      <div class="proj-stack"><span class="stack-b sb-c">React TSX</span><span class="stack-b sb-a">Vite</span><span class="stack-b sb-p">NestJS</span><span class="stack-b sb-g">MongoDB Atlas</span><span class="stack-b sb-c">Python</span><span class="stack-b sb-p">LLM+NLP</span><span class="stack-b sb-c">APIs inférence</span><span class="stack-b sb-g">Kubernetes</span><span class="stack-b sb-a">Docker</span><span class="stack-b sb-c">CI/CD</span><span class="stack-b sb-p">Grafana</span><span class="stack-b sb-g">Prometheus</span><span class="stack-b sb-a">Nginx</span><span class="stack-b sb-p">SonarQube</span><span class="stack-b sb-k">Webhooks</span></div>
+      <div class="proj-footer"><span class="proj-link">→ Enterprise App</span><span class="star-badge">⭐ Projet phare</span></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience" class="section-wrap">
+  <div class="section-header">
+    <div class="section-tag" data-fr="Expérience" data-en="Experience">Expérience</div>
+    <h2 class="section-title" data-fr="Clubs <span>&amp; Leadership</span>" data-en="Clubs <span>&amp; Leadership</span>">Clubs <span>&amp; Leadership</span></h2>
+  </div>
+  <div class="exp-grid">
+    <div class="card exp-card" style="transition-delay:0.1s"><div class="exp-icon">✈️</div><div class="exp-role" data-fr="Président" data-en="President">Président</div><h3 data-fr="Aero ESPRIT Club" data-en="Aero ESPRIT Club">Aero ESPRIT Club</h3><p data-fr="Club d'aéromodélisme et d'aéronautique d'ESPRIT. Organisation d'événements, gestion d'équipe, participations à des compétitions de modélisme aéronautique." data-en="ESPRIT aeromodeling and aeronautics club. Event organization, team management, participation in aeromodeling competitions.">Club d'aéromodélisme et d'aéronautique d'ESPRIT. Organisation d'événements, gestion d'équipe, participations à des compétitions de modélisme aéronautique.</p></div>
+    <div class="card exp-card" style="transition-delay:0.2s"><div class="exp-icon">🏛️</div><div class="exp-role" data-fr="Vice-Président" data-en="Vice-President">Vice-Président</div><h3>Club Hermès — ISET Sousse</h3><p data-fr="Coordination d'activités, organisation d'événements académiques et culturels, développement du réseau étudiant. Expérience en gestion de projet collaboratif." data-en="Activity coordination, organization of academic and cultural events, student network development. Experience in collaborative project management.">Coordination d'activités, organisation d'événements académiques et culturels, développement du réseau étudiant. Expérience en gestion de projet collaboratif.</p></div>
+    <div class="card exp-card" style="transition-delay:0.3s"><div class="exp-icon">🤝</div><div class="exp-role" data-fr="Philosophie" data-en="Philosophy">Philosophie</div><h3 data-fr="Esprit d'Équipe &amp; Intégrité" data-en="Team Spirit &amp; Integrity">Esprit d'Équipe &amp; Intégrité</h3><p data-fr="Je ne suis pas le type 'boss' — je suis un bon leader parce que j'aime sincèrement le travail en groupe. Les meilleures solutions émergent de la collaboration et d'une intégrité sans compromis." data-en="I'm not the 'boss' type — I'm a good leader because I sincerely love teamwork. The best solutions emerge from collaboration and uncompromising integrity.">Je ne suis pas le type "boss" — je suis un bon leader parce que j'aime sincèrement le travail en groupe. Les meilleures solutions émergent de la collaboration et d'une intégrité sans compromis.</p></div>
+  </div>
+</section>
+
+<!-- ===== LANGUAGES ===== -->
+<section class="section-wrap">
+  <div class="section-header">
+    <div class="section-tag" data-fr="Communication" data-en="Communication">Communication</div>
+    <h2 class="section-title" data-fr="Langues <span>Maîtrisées</span>" data-en="Languages <span>Mastered</span>">Langues <span>Maîtrisées</span></h2>
+  </div>
+  <div class="lang-grid">
+    <div class="card" style="text-align:center;transition-delay:0.1s"><span class="lang-flag">🇹🇳</span><div class="lang-name" data-fr="Arabe" data-en="Arabic">Arabe</div><div class="lang-level" data-fr="Langue Maternelle" data-en="Native Language">Langue Maternelle</div><div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div></div>
+    <div class="card" style="text-align:center;transition-delay:0.2s"><span class="lang-flag">🇫🇷</span><div class="lang-name">Français</div><div class="lang-level">B2 — Avancé</div><div class="lang-bar"><div class="lang-fill" style="width:75%"></div></div></div>
+    <div class="card" style="text-align:center;transition-delay:0.3s"><span class="lang-flag lang-flag-en" aria-hidden="true">EN</span><div class="lang-name" data-fr="Anglais" data-en="English">Anglais</div><div class="lang-level" data-fr="B2+ — Avancé" data-en="B2+ — Advanced">B2+ — Avancé</div><div class="lang-bar"><div class="lang-fill" style="width:80%"></div></div></div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="section-wrap">
+  <div class="contact-grid">
+    <div>
+      <div class="section-tag" data-fr="Contact" data-en="Contact">Contact</div>
+      <h2 style="font-family:var(--display);font-size:2.4rem;font-weight:800;color:var(--text);margin-bottom:1rem">
+        <span data-fr="Travaillons" data-en="Let's work">Travaillons</span> <span style="background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent" data-fr="ensemble" data-en="together">ensemble</span>
+      </h2>
+      <p style="color:var(--text2);font-size:1rem;line-height:1.8;margin-bottom:2rem" data-fr="Disponible pour des opportunités full-time, missions freelance ou collaborations sur des projets innovants." data-en="Available for full-time opportunities, freelance missions or collaborations on innovative projects.">Disponible pour des opportunités full-time, missions freelance ou collaborations sur des projets innovants.</p>
+      <a href="mailto:med.amin.chniti@gmail.com" class="btn-primary">
+        <i class="fa-solid fa-envelope" style="font-size:14px" aria-hidden="true"></i>
+        <span data-fr="Envoyer un email" data-en="Send an email">Envoyer un email</span>
+      </a>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:med.amin.chniti@gmail.com" class="contact-link"><div class="cl-icon" aria-hidden="true"><i class="fa-brands fa-google"></i></div><div><span class="cl-label">Gmail</span><span class="cl-value">med.amin.chniti@gmail.com</span></div></a>
+      <a href="mailto:Medamin.Chniti@esprit.tn" class="contact-link"><div class="cl-icon" aria-hidden="true"><i class="fa-brands fa-microsoft"></i></div><div><span class="cl-label">Outlook / ESPRIT</span><span class="cl-value">Medamin.Chniti@esprit.tn</span></div></a>
+      <a href="https://www.linkedin.com/in/med-amin-chniti-08a3562a2/" class="contact-link" target="_blank" rel="noopener noreferrer"><div class="cl-icon" aria-hidden="true"><i class="fa-brands fa-linkedin-in"></i></div><div><span class="cl-label">LinkedIn</span><span class="cl-value">Med Amin Chniti</span></div></a>
+      <a href="https://github.com/medamin87737" class="contact-link" target="_blank" rel="noopener noreferrer"><div class="cl-icon" aria-hidden="true"><i class="fa-brands fa-github"></i></div><div><span class="cl-label">GitHub</span><span class="cl-value">medamin87737</span></div></a>
+      <a href="https://wa.me/21654559210" class="contact-link" target="_blank" rel="noopener noreferrer"><div class="cl-icon" aria-hidden="true"><i class="fa-brands fa-whatsapp"></i></div><div><span class="cl-label">WhatsApp</span><span class="cl-value">+216 54 559 210</span></div></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-logo">Chniti Med Amin <em>·</em> Ingénieur Informatique</div>
+  <div id="amin-api-footer" class="amin-api-footer" role="note">
+    <div>
+      <i class="fa-solid fa-heart-pulse" style="margin-right:6px;opacity:0.85" aria-hidden="true"></i>
+      <span data-fr="AminMind · API (santé) : " data-en="AminMind · API health: ">AminMind · API (santé) : </span>
+      <a id="amin-api-health-link" href="#" target="_blank" rel="noopener noreferrer" title="POST /api/chat avec JSON { messages }">—</a>
+    </div>
+    <div id="amin-api-footer-extra" style="margin-top:6px;opacity:0.92"></div>
+    <span id="amin-api-footer-status" style="display:block;margin-top:4px;color:var(--accent3)"></span>
+  </div>
+  <div class="footer-copy" data-fr="© 2026 · Fait avec passion" data-en="© 2026 · Made with passion">© 2026 · Fait avec passion</div>
+</footer>
+
+<!-- ===== AMINMIND PANEL ===== -->
+<div id="agent-panel">
+  <div class="agent-header">
+    <div class="agent-avatar-wrap" aria-hidden="true">
+      <img id="agentPanelPhoto" src="photo.png" alt="" width="40" height="40" decoding="async"/>
+      <span class="agent-ai-chip">AI</span>
+    </div>
+    <div>
+      <div class="agent-name">AminMind</div>
+      <div class="agent-status" data-fr="Assistant portfolio · réponses via backend sécurisé" data-en="Portfolio assistant · answers via secure backend">Assistant portfolio · réponses via backend sécurisé</div>
+    </div>
+    <button onclick="toggleAgent()" style="margin-left:auto;background:transparent;border:none;color:var(--text2);font-size:1.2rem;cursor:none" aria-label="Fermer">✕</button>
+  </div>
+  <div id="agent-messages">
+    <div class="msg bot" id="agent-welcome">
+      👋 Salut ! Je suis <strong>AminMind</strong>, le guide intelligent de <strong>Chniti Med Amin</strong>.<br><br>
+      Posez-moi une question sur ses projets, sa stack ou son parcours — les réponses IA passent par un petit serveur pour ne jamais exposer de clé API dans le navigateur.
+    </div>
+  </div>
+  <div class="agent-input-row">
+    <input type="text" id="agent-input" placeholder="Posez votre question..." onkeypress="if(event.key==='Enter')sendAgent()"/>
+    <button id="agent-send" onclick="sendAgent()" type="button" aria-label="Envoyer"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></button>
+  </div>
+</div>
+
+<script>
+// ========== PHOTO ==========
+document.getElementById('profilePhoto').src = 'photo.png';
+
+// ========== TECH ORBIT ICONS ==========
+var TECH_LOGOS = [
+  {name:'React',svg:'<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.4" fill="#00d4ff"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#00d4ff" stroke-width="1.2" fill="none"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#00d4ff" stroke-width="1.2" fill="none" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#00d4ff" stroke-width="1.2" fill="none" transform="rotate(120 12 12)"/></svg>'},
+  {name:'Docker',svg:'<svg viewBox="0 0 24 24" fill="#00d4ff"><path d="M13.98 11.08h2.12v-2.1h-2.12v2.1zm-3.15 0h2.11v-2.1h-2.11v2.1zm-3.15 0h2.11v-2.1H7.68v2.1zm0-3.14h2.11V5.84H7.68v2.1zm3.15 0h2.11V5.84h-2.11v2.1zm6.3-2.1h-2.12v2.1h2.12V5.84zM4.53 11.08h2.11v-2.1H4.53v2.1zM22.8 11.58c-.26-.2-.85-.27-1.28-.19-.06-.44-.29-.82-.72-1.14l-.24-.16-.17.23c-.21.3-.33.74-.29 1.17.03.28.12.57.28.8a3.7 3.7 0 01-1.64.36H.09l-.04.22a5.1 5.1 0 00.3 2.31c.32.79.79 1.37 1.41 1.73.69.4 1.8.63 3.07.63.57 0 1.15-.06 1.7-.18a8.5 8.5 0 002.65-1.05 6.9 6.9 0 001.87-1.71c.9 1.01 2.25 1.58 3.8 1.58h.68l.04-.03c.12-.08.24-.19.37-.3l.01.33h1.34v-2.46h1.33v2.46h1.34v-2.73l.23.27c.38.43.88.62 1.46.55.56-.07 1.06-.4 1.39-.93l.1-.16-.15-.11z"/></svg>'},
+  {name:'Python',svg:'<svg viewBox="0 0 24 24"><path fill="#10b981" d="M12 1.5c-5.5 0-5.2 2.4-5.2 2.4l.01 2.5H12v.7H5.1S1.5 6.7 1.5 12.3s3.1 5.3 3.1 5.3H6v-2.6s-.1-3.1 3-3.1H14.6s2.9.05 2.9-2.8V4.3s.44-2.8-5.5-2.8zM10.4 3.3c.52 0 .94.42.94.94s-.42.94-.94.94-.94-.42-.94-.94.42-.94.94-.94z"/><path fill="#10b981" d="M12 22.5c5.5 0 5.2-2.4 5.2-2.4l-.01-2.5H12v-.7h6.9s3.6.4 3.6-5.2-3.1-5.3-3.1-5.3H18v2.6s.1 3.1-3 3.1H9.4s-2.9-.05-2.9 2.8v4.8s-.44 2.8 5.5 2.8zm1.6-1.8c-.52 0-.94-.42-.94-.94s.42-.94.94-.94.94.42.94.94-.42.94-.94.94z"/></svg>'},
+  {name:'K8s',svg:'<svg viewBox="0 0 24 24" fill="#7c3aed"><path d="M10.8 1.3L3 5.7V15l7.8 4.5 7.9-4.5V5.7L10.8 1.3zM9.4 14.9H7.8l-.3-1.3H5.9l-.3 1.3H4l2-7h1.4l2 7zm2.5 0l-2.1-7h1.6l1.4 5.2 1.4-5.2h1.6l-2.1 7h-1.8zm5.4 0h-1.6l-2-7h1.6l.7 2.6.8-2.6h1.6l-2 7z"/></svg>'},
+  {name:'Git',svg:'<svg viewBox="0 0 24 24" fill="#f59e0b"><path d="M23.4 11.26L12.74.6a2.04 2.04 0 00-2.88 0L7.8 2.67l2.63 2.63a2.42 2.42 0 013.07 3.08l2.54 2.54a2.42 2.42 0 11-1.45 1.45l-2.37-2.37v6.24a2.42 2.42 0 11-1.99-.07V9.85a2.42 2.42 0 01-1.31-3.18L5.92 4.05.6 9.37a2.04 2.04 0 000 2.88l10.66 10.66a2.04 2.04 0 002.88 0l9.26-9.26a2.04 2.04 0 000-2.89"/></svg>'},
+  {name:'CI/CD',svg:'<svg viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>'},
+  {name:'Grafana',svg:'<svg viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>'},
+  {name:'Linux',svg:'<svg viewBox="0 0 24 24" fill="#94a3b8"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>'},
+  {name:'Vite',svg:'<svg viewBox="0 0 24 24" fill="none"><path d="M2 4l10 18L22 4" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 4l4 8 4-8" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'},
+  {name:'Angular',svg:'<svg viewBox="0 0 24 24" fill="#dd0031"><path d="M12 2L2 6l2 14 8 4 8-4 2-14L12 2zm0 4l6 14h-3l-1.5-4h-3L10 20H7l6-14z"/></svg>'},
+  {name:'TypeScript',svg:'<svg viewBox="0 0 24 24" fill="#3178c6"><rect width="24" height="24" rx="3" fill="#3178c6"/><text x="12" y="16" text-anchor="middle" fill="#fff" font-size="9" font-family="monospace" font-weight="700">TS</text></svg>'},
+  {name:'Spring',svg:'<svg viewBox="0 0 24 24" fill="#6db33f"><path d="M12 3C9 8 7 11 7 14 7 17 9 19 12 19 15 19 17 17 17 14 17 11 15 8 12 3z"/><ellipse cx="12" cy="9.5" rx="2.2" ry="3" fill="#fff" opacity=".35"/></svg>'},
+  {name:'Prometheus',svg:'<svg viewBox="0 0 24 24" fill="#e6522c"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>'},
+  {name:'HTML',svg:'<svg viewBox="0 0 24 24"><rect fill="#e34f26" width="24" height="24" rx="2"/><text x="12" y="16" text-anchor="middle" fill="#fff" font-size="8" font-family="monospace" font-weight="700">5</text></svg>'},
+  {name:'CSS',svg:'<svg viewBox="0 0 24 24"><rect fill="#1572b6" width="24" height="24" rx="2"/><text x="12" y="16" text-anchor="middle" fill="#fff" font-size="8" font-family="monospace" font-weight="700">3</text></svg>'},
+  {name:'SQL',svg:'<svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.5"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6"/><path d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>'},
+];
+
+var MID_TECH = [
+  {name:'NestJS',svg:'<svg viewBox="0 0 24 24"><path fill="#e0234e" d="M14.13 1.02c-.27-.15-.62-.1-.84.14L9.6 5.3 7.4 3.1a.62.62 0 00-1.02.47l.04 9.08-2.5-2.43a.63.63 0 00-1.07.44L3 16.43C3.3 20.1 6.7 22 12 22c5.4 0 9-2 9-5.57 0-3.22-2.7-6.1-4.5-7.67v-.01L14.13 1.02z"/></svg>'},
+  {name:'MongoDB',svg:'<svg viewBox="0 0 24 24" fill="#10b981"><path d="M17.19 3.08a9.68 9.68 0 00-2.27-2.45A9.31 9.31 0 0012.48.1a9.43 9.43 0 00-5.8 2.23A9.72 9.72 0 003.6 8.46a9.78 9.78 0 002.5 7.1c.37.43.72.9 1.05 1.4.26.4.47.83.63 1.28l.79 3.13c.05.19.22.33.42.33h2.33c.2 0 .37-.14.42-.33l.79-3.13c.16-.44.37-.88.63-1.28.33-.5.68-.97 1.05-1.4a9.8 9.8 0 002.5-7.1 9.84 9.84 0 00-1.02-4.38z"/></svg>'},
+  {name:'Java',svg:'<svg viewBox="0 0 24 24" fill="#f59e0b"><path d="M8.85 16.82c0 0-1.09.63.78.85 2.24.26 3.39.22 5.86-.25 0 0 .65.41 1.56.76-5.53 2.38-12.52-.14-8.2-1.36"/></svg>'},
+  {name:'Keycloak',svg:'<svg viewBox="0 0 24 24" fill="#7c3aed"><path d="M12 2l10 5v10l-10 5L2 17V7L12 2zm0 3.5L6 8v8l6 2.5 6-2.5V8l-6-2.5z"/></svg>'},
+  {name:'Eureka',svg:'<svg viewBox="0 0 24 24" fill="#10b981"><text x="6" y="17" font-size="11" font-family="monospace" font-weight="700">Eu</text></svg>'},
+  {name:'Config',svg:'<svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>'},
+  {name:'H2',svg:'<svg viewBox="0 0 24 24"><rect fill="#1e4b96" width="24" height="24" rx="3"/><text x="12" y="16" text-anchor="middle" fill="#fff" font-size="10" font-family="monospace" font-weight="700">H2</text></svg>'},
+  {name:'Vitest',svg:'<svg viewBox="0 0 24 24" fill="#6ee7b7"><text x="4" y="16" font-size="9" font-family="monospace" font-weight="700">Vt</text></svg>'},
+  {name:'Sonar',svg:'<svg viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>'},
+  {name:'.NET',svg:'<svg viewBox="0 0 24 24" fill="#7c3aed"><path d="M3.5 14.5c-.8 0-1.5-.7-1.5-1.5S2.7 11.5 3.5 11.5s1.5.7 1.5 1.5S4.3 14.5 3.5 14.5zm4-7.5L4.4 14H6l.7-1.8h3.6l.7 1.8h1.6L9.5 7H7.5z"/></svg>'},
+  {name:'C#',svg:'<svg viewBox="0 0 24 24" fill="#00d4ff"><text x="4" y="17" font-size="12" font-family="monospace" font-weight="700">C#</text></svg>'},
+  {name:'C',svg:'<svg viewBox="0 0 24 24" fill="#94a3b8"><text x="8" y="17" font-size="14" font-family="monospace" font-weight="700">C</text></svg>'},
+  {name:'C++',svg:'<svg viewBox="0 0 24 24" fill="#00d4ff"><text x="2" y="18" font-size="13" font-family="monospace" font-weight="bold">C++</text></svg>'},
+  {name:'Webhook',svg:'<svg viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="1.5"><path d="M12 4v4M8 8l4 8 4-8"/></svg>'},
+  {name:'Nginx',svg:'<svg viewBox="0 0 24 24" fill="#10b981"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.3l7.7 3.8-7.7 3.8-7.7-3.8L12 4.3zM4 8.8l7 3.5v6.4l-7-3.5V8.8zm16 0v6.4l-7 3.5v-6.4l7-3.5z"/></svg>'},
+];
+
+var INNER_TECH = [
+  {name:'LLM',svg:'<svg viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>'},
+  {name:'NLP',svg:'<svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.5"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/><path d="M12 8v8M8 12h8"/></svg>'},
+  {name:'API IA',svg:'<svg viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M8 10h8M8 14h5"/></svg>'},
+  {name:'AlertMgr',svg:'<svg viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 22a2 2 0 002-2H10a2 2 0 002 2zm6-6V11c0-3.07-1.63-5.64-4.5-6.32V4a1.5 1.5 0 00-3 0v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>'},
+  {name:'REST',svg:'<svg viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="1.5"><path d="M4 12h16M12 4v16"/></svg>'},
+  {name:'JavaFX',svg:'<svg viewBox="0 0 24 24" fill="#538398"><text x="3" y="15" font-size="8" font-family="monospace" font-weight="700">FX</text></svg>'},
+  {name:'JWT',svg:'<svg viewBox="0 0 24 24" fill="#f472b6"><text x="5" y="15" font-size="9" font-family="monospace" font-weight="700">JWT</text></svg>'},
+  {name:'API GW',svg:'<svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.5"><rect x="3" y="7" width="18" height="10" rx="2"/><path d="M8 12h8"/></svg>'},
+];
+
+function buildOrbit(containerId, techs, radius, size) {
+  var c = document.getElementById(containerId);
+  var containerSize = c.parentElement.offsetWidth;
+  var cx = c.parentElement.offsetWidth / 2;
+  var cy = c.parentElement.offsetHeight / 2;
+  var n = techs.length;
+  techs.forEach(function(t, i) {
+    var angle = (i / n) * 2 * Math.PI - Math.PI / 2;
+    // Position as % of the container
+    var x = 50 + (radius) * Math.cos(angle);
+    var y = 50 + (radius) * Math.sin(angle);
+    var el = document.createElement('div');
+    el.className = 'orbit-icon';
+    el.style.left = x + '%';
+    el.style.top = y + '%';
+    el.style.transform = 'translate(-50%,-50%)';
+    el.style.width = size + 'px';
+    el.style.height = size + 'px';
+    el.innerHTML = '<div style="width:'+(size-14)+'px;height:'+(size-14)+'px">' + t.svg + '</div><span>' + t.name + '</span>';
+    c.appendChild(el);
+  });
+}
+
+window.addEventListener('load', function() {
+  buildOrbit('orbit3', TECH_LOGOS, 54, 38);
+  buildOrbit('orbit1', MID_TECH, 41, 40);
+  buildOrbit('orbit2', INNER_TECH, 29, 34);
+});
+
+// ========== COUNTER ANIMATION ==========
+function animateCounters() {
+  document.querySelectorAll('[data-count]').forEach(function(el) {
+    var target = parseInt(el.dataset.count);
+    var current = 0;
+    var step = Math.ceil(target / 40);
+    var timer = setInterval(function() {
+      current = Math.min(current + step, target);
+      el.textContent = current + '+';
+      if (current >= target) clearInterval(timer);
+    }, 40);
+  });
+}
+
+// ========== TYPED TITLE ==========
+var titles_fr = ['Ingénieur Informatique', 'Développeur Full Stack', 'DevOps Engineer', 'AI/ML Developer'];
+var titles_en = ['Computer Engineer', 'Full Stack Developer', 'DevOps Engineer', 'AI/ML Developer'];
+var titleIdx = 0, charIdx = 0, isDeleting = false, currentLang = 'fr';
+
+function typeTitle() {
+  var titles = currentLang === 'fr' ? titles_fr : titles_en;
+  var current = titles[titleIdx];
+  var el = document.getElementById('typed-title');
+  if (isDeleting) {
+    charIdx--;
+  } else {
+    charIdx++;
+  }
+  el.textContent = current.substring(0, charIdx);
+  var speed = isDeleting ? 60 : 100;
+  if (!isDeleting && charIdx === current.length) {
+    speed = 2000;
+    isDeleting = true;
+  } else if (isDeleting && charIdx === 0) {
+    isDeleting = false;
+    titleIdx = (titleIdx + 1) % titles.length;
+    speed = 300;
+  }
+  setTimeout(typeTitle, speed);
+}
+setTimeout(typeTitle, 800);
+
+// ========== CURSOR (dynamique — couleur selon vitesse) ==========
+var cur = document.getElementById('cursor');
+var curT = document.getElementById('cursor-trail');
+var mx = 0, my = 0, tx = 0, ty = 0, px = 0, py = 0, hue = 185, vel = 0;
+document.addEventListener('mousemove', function(e) {
+  mx = e.clientX; my = e.clientY;
+  var dx = mx - px, dy = my - py;
+  px = mx; py = my;
+  vel = Math.min(40, Math.sqrt(dx*dx + dy*dy));
+  hue = (hue + vel * 3 + dx + dy) % 360;
+  if (document.documentElement.getAttribute('data-custom-cursor') !== 'off') {
+    cur.style.left = (mx-6)+'px'; cur.style.top = (my-6)+'px';
+    cur.style.background = 'hsl('+hue+',92%,62%)';
+    cur.style.boxShadow = '0 0 22px hsla('+hue+',95%,55%,0.65)';
+    curT.style.borderColor = 'hsla('+hue+',80%,60%,0.45)';
+    curT.style.transform = 'scale('+(1+vel/90)+')';
+  }
+});
+(function animT() {
+  tx += (mx-tx)*0.14; ty += (my-ty)*0.14;
+  if (document.documentElement.getAttribute('data-custom-cursor') !== 'off') {
+    curT.style.left = (tx-16)+'px'; curT.style.top = (ty-16)+'px';
+  }
+  requestAnimationFrame(animT);
+})();
+document.addEventListener('mousedown', function(){ if(cur) cur.style.transform='scale(0.55)'; });
+document.addEventListener('mouseup', function(){ if(cur) cur.style.transform='scale(1)'; });
+
+// ========== SCROLL BAR ==========
+window.addEventListener('scroll', function() {
+  var pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  document.getElementById('scroll-bar').style.width = pct + '%';
+});
+
+// ========== INTERSECTION OBSERVER ==========
+var io = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      var bar = e.target.querySelector('.lang-fill');
+      if (bar) setTimeout(function(){bar.classList.add('animated')}, 400);
+    }
+  });
+}, {threshold: 0.12});
+
+document.querySelectorAll('.card, .proj-card, .section-header').forEach(function(el){ io.observe(el); });
+
+// Count up when hero is visible
+var counted = false;
+new IntersectionObserver(function(e){ if(e[0].isIntersecting && !counted){counted=true;animateCounters();} },{threshold:0.5}).observe(document.getElementById('hero'));
+
+// ========== PARTICLES ==========
+var pCont = document.getElementById('particles');
+for (var i=0;i<25;i++) {
+  var p = document.createElement('div');
+  p.className = 'particle';
+  p.style.left = Math.random()*100+'%';
+  p.style.animationDuration = (8+Math.random()*15)+'s';
+  p.style.animationDelay = (-Math.random()*20)+'s';
+  p.style.opacity = Math.random()*0.6;
+  p.style.width = p.style.height = (1+Math.random()*2)+'px';
+  pCont.appendChild(p);
+}
+
+// ========== ACCESSIBILITÉ AVANCÉE (panneau + annonces) ==========
+function announce(msg) {
+  var n = document.getElementById('a11y-live');
+  if (!n) return;
+  n.textContent = '';
+  setTimeout(function(){ n.textContent = msg; }, 40);
+}
+function toggleA11yHub(evt) {
+  if (evt && evt.stopPropagation) evt.stopPropagation();
+  var p = document.getElementById('a11y-hub-panel');
+  var fab = document.getElementById('a11y-hub-fab');
+  if (!p || !fab) return;
+  var open = p.classList.toggle('open');
+  fab.setAttribute('aria-expanded', open ? 'true' : 'false');
+  p.setAttribute('aria-hidden', open ? 'false' : 'true');
+  if (open) {
+    var ag = document.getElementById('agent-panel');
+    if (ag && ag.classList.contains('open')) {
+      ag.classList.remove('open');
+      agentOpen = false;
+    }
+    refreshA11ySwitches();
+    syncHubActiveBtns();
+    syncHubLangBtn();
+  }
+}
+function closeA11yHub() {
+  var p = document.getElementById('a11y-hub-panel');
+  var fab = document.getElementById('a11y-hub-fab');
+  if (p) {
+    p.classList.remove('open');
+    p.setAttribute('aria-hidden', 'true');
+  }
+  if (fab) fab.setAttribute('aria-expanded', 'false');
+}
+function syncHubActiveBtns() {
+  var h = document.documentElement;
+  function hb(id, cond) {
+    var el = document.getElementById(id);
+    if (el) el.classList.toggle('active', !!cond);
+  }
+  hb('hub-btn-theme', h.getAttribute('data-theme') === 'light');
+  hb('hub-btn-contrast', h.getAttribute('data-contrast') === 'high');
+  hb('hub-btn-reading', h.getAttribute('data-reading') === 'on');
+  hb('hub-btn-dyslexia', h.getAttribute('data-dyslexia') === 'on');
+  hb('hub-btn-motion', h.getAttribute('data-reduce-motion') === 'on');
+  hb('hub-btn-focus', document.body.classList.contains('focus-mode'));
+  hb('hub-btn-cursor', h.getAttribute('data-custom-cursor') === 'off');
+}
+function syncHubLangBtn() {
+  var b = document.getElementById('a11y-hub-lang-btn');
+  if (b) b.textContent = '🌐 ' + (lang === 'fr' ? 'EN' : 'FR');
+}
+function aminTypeBotMessage(el, fullText, msgsEl, onDone) {
+  var i = 0;
+  var tw = setInterval(function () {
+    if (i < fullText.length) {
+      el.textContent += fullText[i];
+      i++;
+      msgsEl.scrollTop = msgsEl.scrollHeight;
+    } else {
+      clearInterval(tw);
+      if (onDone) onDone();
+    }
+  }, 18);
+}
+function toggleHtmlFlag(attr, switchId) {
+  var html = document.documentElement;
+  var cur = html.getAttribute(attr) || 'off';
+  var next = cur === 'on' ? 'off' : 'on';
+  html.setAttribute(attr, next);
+  var sw = document.getElementById(switchId);
+  if (sw) {
+    sw.classList.toggle('on', next === 'on');
+    sw.setAttribute('aria-pressed', next === 'on' ? 'true' : 'false');
+  }
+}
+function toggleParticles() {
+  var html = document.documentElement;
+  var cur = html.getAttribute('data-particles') || 'on';
+  var next = cur === 'on' ? 'off' : 'on';
+  html.setAttribute('data-particles', next);
+  var sw = document.getElementById('sw-part');
+  if (sw) {
+    sw.classList.toggle('on', next === 'off');
+    sw.setAttribute('aria-pressed', next === 'off' ? 'true' : 'false');
+  }
+}
+function toggleCustomCursor() {
+  var html = document.documentElement;
+  var cur = html.getAttribute('data-custom-cursor') || 'on';
+  var next = cur === 'on' ? 'off' : 'on';
+  html.setAttribute('data-custom-cursor', next);
+  var btn = document.getElementById('hub-btn-cursor');
+  if (btn) btn.classList.toggle('active', next === 'off');
+  announce(next === 'off' ? (lang === 'fr' ? 'Curseur système' : 'System cursor') : (lang === 'fr' ? 'Curseur dynamique' : 'Dynamic cursor'));
+}
+function refreshA11ySwitches() {
+  var h = document.documentElement;
+  function setSw(id, attr, valOn) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var on = (h.getAttribute(attr) || 'off') === valOn;
+    el.classList.toggle('on', on);
+    el.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+  setSw('sw-underline','data-underline-links','on');
+  setSw('sw-line','data-line-wide','on');
+  setSw('sw-target','data-target-large','on');
+  setSw('sw-focus','data-focus-strong','on');
+  setSw('sw-fatigue','data-fatigue','on');
+  setSw('sw-blue','data-blue-light','on');
+  setSw('sw-gray','data-grayscale','on');
+  var swp = document.getElementById('sw-part');
+  if (swp) {
+    var pOff = h.getAttribute('data-particles') === 'off';
+    swp.classList.toggle('on', pOff);
+    swp.setAttribute('aria-pressed', pOff ? 'true' : 'false');
+  }
+  var bcur = document.getElementById('hub-btn-cursor');
+  if (bcur) bcur.classList.toggle('active', h.getAttribute('data-custom-cursor') === 'off');
+  syncHubActiveBtns();
+}
+function resetA11y() {
+  var h = document.documentElement;
+  h.setAttribute('data-theme','dark');
+  h.setAttribute('data-font-size','1');
+  h.setAttribute('data-contrast','normal');
+  h.setAttribute('data-reading','off');
+  h.setAttribute('data-dyslexia','off');
+  h.setAttribute('data-reduce-motion','off');
+  h.setAttribute('data-fatigue','off');
+  h.setAttribute('data-blue-light','off');
+  h.setAttribute('data-grayscale','off');
+  h.setAttribute('data-underline-links','off');
+  h.setAttribute('data-line-wide','off');
+  h.setAttribute('data-target-large','off');
+  h.setAttribute('data-particles','on');
+  h.setAttribute('data-focus-strong','off');
+  h.setAttribute('data-custom-cursor','on');
+  document.body.classList.remove('focus-mode');
+  fsLevel = 1;
+  refreshA11ySwitches();
+  announce(lang === 'fr' ? 'Préférences d’accessibilité réinitialisées.' : 'Accessibility preferences reset.');
+}
+document.addEventListener('click', function (e) {
+  var p = document.getElementById('a11y-hub-panel');
+  var fab = document.getElementById('a11y-hub-fab');
+  if (!p || !p.classList.contains('open')) return;
+  if (fab && fab.contains(e.target)) return;
+  if (p.contains(e.target)) return;
+  closeA11yHub();
+});
+document.addEventListener('keydown', function (e) {
+  if (e.key !== 'Escape') return;
+  closeA11yHub();
+  var ap = document.getElementById('agent-panel');
+  if (ap && ap.classList.contains('open')) {
+    ap.classList.remove('open');
+    agentOpen = false;
+  }
+});
+document.addEventListener('DOMContentLoaded', function () {
+  refreshA11ySwitches();
+  syncHubLangBtn();
+  syncAminApiFooter();
+});
+
+// ========== ACCESSIBILITY ==========
+var fsLevel = 1;
+function toggleTheme() {
+  var html = document.documentElement;
+  var current = html.getAttribute('data-theme');
+  html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+  syncHubActiveBtns();
+}
+function changeFontSize(d) {
+  fsLevel = Math.max(1, Math.min(3, fsLevel+d));
+  document.documentElement.setAttribute('data-font-size', fsLevel);
+}
+function toggleContrast() {
+  var html = document.documentElement;
+  var isHigh = html.getAttribute('data-contrast') === 'high';
+  html.setAttribute('data-contrast', isHigh ? 'normal' : 'high');
+  syncHubActiveBtns();
+}
+function toggleReading() {
+  var html = document.documentElement;
+  var isOn = html.getAttribute('data-reading') === 'on';
+  html.setAttribute('data-reading', isOn ? 'off' : 'on');
+  syncHubActiveBtns();
+}
+function toggleDyslexia() {
+  var html = document.documentElement;
+  var isOn = html.getAttribute('data-dyslexia') === 'on';
+  html.setAttribute('data-dyslexia', isOn ? 'off' : 'on');
+  syncHubActiveBtns();
+}
+function toggleReduceMotion() {
+  var html = document.documentElement;
+  var isOn = html.getAttribute('data-reduce-motion') === 'on';
+  html.setAttribute('data-reduce-motion', isOn ? 'off' : 'on');
+  syncHubActiveBtns();
+}
+function focusMode() {
+  document.body.classList.toggle('focus-mode');
+  syncHubActiveBtns();
+}
+
+// ========== LANG TOGGLE ==========
+var lang = 'fr';
+function toggleLang() {
+  lang = lang === 'fr' ? 'en' : 'fr';
+  syncHubLangBtn();
+  document.querySelectorAll('[data-fr][data-en]').forEach(function (el) {
+    if (el.id === 'a11y-hub-fab') return;
+    var val = el.getAttribute('data-' + lang);
+    if (!val) return;
+    if (el.tagName === 'BUTTON' && el.querySelector('.hub-tip')) return;
+    if (el.innerHTML !== undefined && val.includes('<')) {
+      el.innerHTML = val;
+    } else el.textContent = val;
+  });
+  document.querySelectorAll('.hub-tip').forEach(function (el) {
+    var v = el.getAttribute('data-' + lang) || el.getAttribute('data-fr');
+    if (v) el.textContent = v;
+  });
+  currentLang = lang;
+  document.querySelectorAll('.a11y-tooltip').forEach(function (el) {
+    el.textContent = el.getAttribute('data-' + lang) || el.getAttribute('data-fr');
+  });
+  var nt = document.getElementById('nav-amin-trigger');
+  if (nt) {
+    nt.setAttribute(
+      'aria-label',
+      lang === 'fr' ? 'AminMind — assistant intelligent' : 'AminMind — intelligent assistant'
+    );
+  }
+  var hubFab = document.getElementById('a11y-hub-fab');
+  if (hubFab) {
+    hubFab.setAttribute(
+      'title',
+      lang === 'fr' ? 'Accessibilité — tout regroupé ici' : 'Accessibility — all options here'
+    );
+  }
+  refreshA11ySwitches();
+  syncAminApiFooter();
+}
+
+// ========== AMINMIND (proxy serveur — détection du bon Node via /api/health) ==========
+var AMIN_API_BASE_CACHED = '';
+var AMIN_API_RESOLVE_IN_FLIGHT = null;
+function invalidateAminmindApiCache() {
+  AMIN_API_BASE_CACHED = '';
+  try {
+    sessionStorage.removeItem('aminmindApiBase');
+  } catch (e) {}
+  setTimeout(function () {
+    syncAminApiFooter();
+  }, 0);
+}
+/** Pied de page : rend l’URL /api/health et /api/chat visibles pour éviter les confusions de port (ex. 8082). */
+function syncAminApiFooter() {
+  var linkEl = document.getElementById('amin-api-health-link');
+  var extraEl = document.getElementById('amin-api-footer-extra');
+  var statusEl = document.getElementById('amin-api-footer-status');
+  if (!linkEl || !extraEl || !statusEl) return;
+  var fr = typeof lang !== 'undefined' && lang === 'fr';
+  resolveAminmindApiBase().then(function (base) {
+    base = typeof base === 'string' ? base.replace(/\/+$/, '') : '';
+    if (!base) {
+      linkEl.textContent = fr ? '(non détecté — npm start)' : '(not detected — run npm start)';
+      linkEl.setAttribute('href', '#amin-api-footer');
+      linkEl.setAttribute(
+        'title',
+        fr
+          ? 'Lancez le serveur portfolio et ouvrez l’URL indiquée ; définissez meta amin-public-api ou window.__AMINMIND_API_BASE si besoin.'
+          : 'Start the portfolio server and open the printed URL; set meta amin-public-api or window.__AMINMIND_API_BASE if needed.'
+      );
+      extraEl.textContent = fr
+        ? 'POST JSON : /api/chat sur le processus Node du portfolio (le port exact est affiché au démarrage, souvent 8080–8090, pas forcément 8082).'
+        : 'POST JSON to /api/chat on the portfolio Node process (port is printed at startup, often 8080–8090, not always 8082).';
+      statusEl.textContent = '';
+      return;
+    }
+    var health = base + '/api/health';
+    var chat = base + '/api/chat';
+    linkEl.href = health;
+    linkEl.textContent = health;
+    linkEl.setAttribute('title', 'GET ' + health + ' · portfolio AminMind');
+    extraEl.textContent = '';
+    var chatLabel = document.createTextNode(fr ? 'POST AminMind : ' : 'AminMind POST: ');
+    var a = document.createElement('a');
+    a.href = chat;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.textContent = chat;
+    a.setAttribute('title', 'POST JSON { "messages": [...] }');
+    extraEl.appendChild(chatLabel);
+    extraEl.appendChild(a);
+    fetchJsonHealth(health).then(function (p) {
+      if (p.ok && isPortfolioAminHealthPayload(p.j)) {
+        statusEl.textContent =
+          (fr ? '● API portfolio — clé OpenRouter ' : '● Portfolio API — OpenRouter key ') +
+          (p.j.apiKeyConfigured ? (fr ? 'configurée' : 'configured') : fr ? 'absente (.env)' : 'missing (.env)');
+      } else {
+        statusEl.textContent = fr ? '● Santé : réponse inattendue' : '● Health: unexpected response';
+      }
+    });
+  });
+}
+/**
+ * Ordre : meta amin-public-api, variable globale, port dédié, origine (si http(s)), puis balayage 127.0.0.1:8080–8090
+ * uniquement en dev (fichier local / localhost) pour dépasser Live Server / Vite sur un autre port.
+ */
+function getAminmindApiBaseCandidates() {
+  var list = [];
+  function add(b) {
+    if (!b || typeof b !== 'string') return;
+    b = b.replace(/\/+$/, '').trim();
+    if (!b || b === 'null') return;
+    if (list.indexOf(b) === -1) list.push(b);
+  }
+  var metaEl = document.querySelector('meta[name="amin-public-api"]');
+  var metaApi = metaEl && metaEl.getAttribute('content');
+  add(metaApi ? metaApi.trim() : '');
+  add(typeof window.__AMINMIND_API_BASE === 'string' ? window.__AMINMIND_API_BASE.trim() : '');
+  var fp = window.__AMINMIND_SERVER_PORT;
+  if (typeof fp === 'number' && fp >= 1 && fp <= 65535) add('http://127.0.0.1:' + fp);
+  var loc = window.location;
+  var proto = loc.protocol || '';
+  var host = (loc.hostname || '').toLowerCase();
+  if (proto === 'http:' || proto === 'https:') {
+    var orig = loc.origin;
+    if (orig && orig !== 'null') add(orig);
+  }
+  var scanLocal =
+    proto === 'file:' || host === 'localhost' || host === '127.0.0.1' || host === '' || host === '[::1]';
+  if (scanLocal) {
+    var pi;
+    for (pi = 8080; pi <= 8090; pi++) add('http://127.0.0.1:' + pi);
+  }
+  return list;
+}
+function fetchJsonHealth(url, ms) {
+  ms = ms || 3200;
+  var ac = typeof AbortController !== 'undefined' ? new AbortController() : null;
+  var to = ac
+    ? setTimeout(function () {
+        try {
+          ac.abort();
+        } catch (e) {}
+      }, ms)
+    : 0;
+  return fetch(url, { method: 'GET', credentials: 'omit', signal: ac ? ac.signal : undefined })
+    .then(function (r) {
+      return r.text().then(function (t) {
+        var j = null;
+        try {
+          j = t ? JSON.parse(t) : null;
+        } catch (e) {
+          j = null;
+        }
+        return { ok: r.ok, j: j };
+      });
+    })
+    .catch(function () {
+      return { ok: false, j: null };
+    })
+    .then(function (x) {
+      if (to) clearTimeout(to);
+      return x;
+    });
+}
+/** Uniquement si la réponse JSON vient de ce portfolio (pas Vite / autre) */
+function isPortfolioAminHealthPayload(j) {
+  return j && j.service === 'portfolio' && j.aminmind === true;
+}
+async function resolveAminmindApiBase() {
+  if (AMIN_API_BASE_CACHED) return AMIN_API_BASE_CACHED;
+  if (AMIN_API_RESOLVE_IN_FLIGHT) return AMIN_API_RESOLVE_IN_FLIGHT;
+  AMIN_API_RESOLVE_IN_FLIGHT = (async function () {
+    try {
+      var fromStore = sessionStorage.getItem('aminmindApiBase');
+      if (fromStore) {
+        var probe0 = await fetchJsonHealth(fromStore + '/api/health');
+        if (probe0.ok && isPortfolioAminHealthPayload(probe0.j)) {
+          AMIN_API_BASE_CACHED = fromStore;
+          return fromStore;
+        }
+        sessionStorage.removeItem('aminmindApiBase');
+      }
+    } catch (e1) {}
+    var cands = getAminmindApiBaseCandidates();
+    var i;
+    for (i = 0; i < cands.length; i++) {
+      var base = cands[i];
+      var probe = await fetchJsonHealth(base + '/api/health');
+      if (probe.ok && isPortfolioAminHealthPayload(probe.j)) {
+        AMIN_API_BASE_CACHED = base;
+        try {
+          sessionStorage.setItem('aminmindApiBase', base);
+        } catch (e2) {}
+        return base;
+      }
+    }
+    return '';
+  })();
+  try {
+    var out = await AMIN_API_RESOLVE_IN_FLIGHT;
+    return out;
+  } finally {
+    AMIN_API_RESOLVE_IN_FLIGHT = null;
+  }
+}
+try {
+  window.invalidateAminmindApiCache = invalidateAminmindApiCache;
+} catch (eW) {}
+var agentOpen = false;
+var agentHistory = [];
+
+var SYSTEM_PROMPT = `Tu es « AminMind », le guide conversationnel du portfolio de Chniti Med Amin, ingénieur informatique.
+
+Faits à utiliser :
+- Nom affiché : Chniti Med Amin
+- Formation : ingénieur informatique (ESPRIT), licence en systèmes embarqués (ISET Sousse), baccalauréat technique (2020–2021)
+- Stack : React JSX/TSX, Angular, Vite, JavaFX, Spring Boot, NestJS, Python, C / C# / .NET, Docker, Kubernetes, CI/CD, Grafana, Prometheus, MongoDB, LLM/NLP, APIs d’inférence, etc.
+- Projets : gestion de parking en C ; événements JavaFX ; ML (XGBoost, DBSCAN, régression) avec front React + backend Python ; application web hébergée ; plateforme éducative microservices (Eureka, API Gateway, Keycloak, Config Server, Spring Boot, NestJS, React, H2/SQL, MongoDB) ; plateforme e-commerce (React, Spring Boot, MongoDB) ; plateforme de recherche d'emploi en microservices (Spring, Angular, SQL) ; application de gestion d'événements (Angular, Spring Boot, SQL) ; backend de gestion de cafe (Spring Boot, SQL) ; Maghrebia Assurance — recommandation IA & DevOps enterprise.
+- Vie associative : président club Aéro ESPRIT, vice-président Hermès ISET ; travail d’équipe et intégrité.
+- Langues : arabe (maternelle), français B2, anglais B2+
+- Contact : med.amin.chniti@gmail.com, Medamin.Chniti@esprit.tn, GitHub medamin87737, LinkedIn med-amin-chniti-08a3562a2
+
+Réponds avec précision, ton professionnel et chaleureux. Par défaut en français ; anglais si l’utilisateur écrit en anglais. Ne invente pas de projets non listés.`;
+
+function toggleAgent() {
+  closeA11yHub();
+  agentOpen = document.getElementById('agent-panel').classList.toggle('open');
+}
+
+async function sendAgent() {
+  var input = document.getElementById('agent-input');
+  var msg = input.value.trim();
+  if (!msg) return;
+  input.value = '';
+  
+  var msgs = document.getElementById('agent-messages');
+  var uDiv = document.createElement('div');
+  uDiv.className = 'msg user'; uDiv.textContent = msg; msgs.appendChild(uDiv);
+  
+  var typing = document.createElement('div');
+  typing.className = 'msg bot msg-typing';
+  typing.innerHTML = '<span></span><span></span><span></span>';
+  msgs.appendChild(typing);
+  msgs.scrollTop = msgs.scrollHeight;
+  
+  agentHistory.push({role:'user',content:msg});
+  
+  try {
+    var payloadBody = JSON.stringify({
+      messages:[{role:'system',content:SYSTEM_PROMPT}].concat(agentHistory)
+    });
+    var apiBase = await resolveAminmindApiBase();
+    if (!apiBase) {
+      typing.remove();
+      var nf =
+        lang === 'fr'
+          ? '⚠️ Aucun serveur portfolio détecté. Lancez « npm start » dans le dossier du projet et ouvrez le site via l’URL affichée. Le port 8082 est souvent un autre programme : le vôtre peut être 8080. Vous pouvez forcer : window.__AMINMIND_API_BASE = "http://127.0.0.1:8080"'
+          : '⚠️ No portfolio server found. Run « npm start » and open the printed URL. Port 8082 may be another app; yours may be 8080. Force with: window.__AMINMIND_API_BASE = "http://127.0.0.1:8080"';
+      agentHistory.push({ role: 'assistant', content: nf });
+      var bn = document.createElement('div');
+      bn.className = 'msg bot';
+      msgs.appendChild(bn);
+      aminTypeBotMessage(bn, nf, msgs);
+      msgs.scrollTop = msgs.scrollHeight;
+      return;
+    }
+    var chatUrl = apiBase.replace(/\/$/, '') + '/api/chat';
+    var res = await fetch(chatUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: payloadBody,
+    });
+    if (res.status === 404) {
+      invalidateAminmindApiCache();
+      apiBase = await resolveAminmindApiBase();
+      if (apiBase) {
+        chatUrl = apiBase.replace(/\/$/, '') + '/api/chat';
+        res = await fetch(chatUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: payloadBody,
+        });
+      }
+    }
+    var raw = await res.text();
+    var data = {};
+    try {
+      data = raw ? JSON.parse(raw) : {};
+    } catch (parseErr) {
+      data = { error: 'non_json', message: raw.slice(0, 160) };
+    }
+    typing.remove();
+    var reply;
+    if (res.status === 404) {
+      reply =
+        lang === 'fr'
+          ? '⚠️ 404 API après plusieurs URL : lancez « npm start » dans le dossier portfolio et utilisez cette URL pour naviguer (pas Vite / Live Server / fichier .html seul). Sinon : window.__AMINMIND_API_BASE = "http://127.0.0.1:VOTRE_PORT".'
+          : '⚠️ API 404 on all tried URLs: run « npm start » in the portfolio folder and open that URL (not Vite / Live Server / raw HTML). Or set window.__AMINMIND_API_BASE to your Node server.';
+      agentHistory.push({ role: 'assistant', content: reply });
+      var b404 = document.createElement('div');
+      b404.className = 'msg bot';
+      msgs.appendChild(b404);
+      aminTypeBotMessage(b404, reply, msgs);
+      return;
+    }
+    /* OpenRouter renvoie souvent { error: { message } } — pas confondre avec nos codes string */
+    var openRouterErr =
+      data &&
+      data.error &&
+      typeof data.error === 'object' &&
+      data.error.message;
+    if (data.choices && data.choices[0] && data.choices[0].message) {
+      reply = data.choices[0].message.content;
+    } else if (openRouterErr) {
+      reply =
+        (lang === 'fr' ? '⚠️ Fournisseur IA : ' : '⚠️ AI provider: ') +
+        data.error.message;
+    } else if (data.error === 'missing_api_key') {
+      reply =
+        lang === 'fr'
+          ? '⚠️ Bon serveur trouvé, mais clé OpenRouter absente : dans .env à côté de server.js, OPENROUTER_API_KEY=sk-or-v1-… puis redémarrage npm start. Vérifiez /api/health : "apiKeyConfigured" doit être true.'
+          : '⚠️ Server found, OpenRouter key missing: set OPENROUTER_API_KEY in .env next to server.js, restart npm start. Check /api/health shows apiKeyConfigured: true.';
+    } else if (data.error === 'all_models_failed') {
+      reply =
+        lang === 'fr'
+          ? '⚠️ Tous les modèles gratuits ont été refusés ou sont saturés. Attendez quelques minutes ou réglez OPENROUTER_MODEL dans .env (voir la liste sur openrouter.ai). Détail : ' +
+            (data.message || '')
+          : '⚠️ All free models failed or rate-limited. Wait and retry or set OPENROUTER_MODEL in .env. Detail: ' +
+            (data.message || '');
+    } else if (
+      data.error === 'upstream_unreachable' ||
+      data.error === 'proxy_failed' ||
+      data.error === 'bad_upstream_response'
+    ) {
+      reply =
+        lang === 'fr'
+          ? '⚠️ Le serveur n’a pas pu joindre le fournisseur IA (réseau, pare-feu ou VPN). Ouvrez le site depuis l’URL affichée par « npm start » (Node), pas depuis un autre serveur. Détail : '
+          : '⚠️ The server could not reach the AI provider (network, firewall or VPN). Open the site from the URL printed by « npm start » (Node), not another dev server. Detail: ';
+      reply += data.message || (lang === 'fr' ? 'inconnu' : 'unknown');
+    } else if (!res.ok || data.error) {
+      reply =
+        lang === 'fr'
+          ? '⚠️ Réponse serveur inattendue. Vérifiez OPENROUTER_API_KEY et relancez npm start.'
+          : '⚠️ Unexpected server response. Check OPENROUTER_API_KEY and restart npm start.';
+      if (data && data.message) reply += ' (' + data.message + ')';
+    } else {
+      reply = lang === 'fr' ? 'Réponse inattendue du serveur.' : 'Unexpected server response.';
+    }
+    agentHistory.push({role:'assistant',content:reply});
+    var bDiv = document.createElement('div');
+    bDiv.className = 'msg bot';
+    msgs.appendChild(bDiv);
+    aminTypeBotMessage(bDiv, reply, msgs);
+  } catch(err) {
+    typing.remove();
+    var errText =
+      lang === 'fr'
+        ? '⚠️ Impossible de joindre /api/chat. Lancez « npm start » dans le dossier du portfolio et ouvrez l’URL http://localhost:… affichée (Express). Ne pas utiliser seulement Vite/Live Server : ils ne fournissent pas cet endpoint.'
+        : '⚠️ Cannot reach /api/chat. Run « npm start » in the portfolio folder and open the http://localhost:… URL shown (Express). Vite/Live Server alone do not expose this endpoint.';
+    var eDiv = document.createElement('div');
+    eDiv.className = 'msg bot';
+    msgs.appendChild(eDiv);
+    aminTypeBotMessage(eDiv, errText, msgs);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+}
+</script>
+</body>
+</html>
